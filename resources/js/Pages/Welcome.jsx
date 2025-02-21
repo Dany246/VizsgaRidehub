@@ -2,16 +2,7 @@ import { Head, Link } from "@inertiajs/react";
 import { useEffect, useState } from "react";
 
 export default function Welcome({ auth }) {
-    const handleImageError = () => {
-        document
-            .getElementById("screenshot-container")
-            ?.classList.add("!hidden");
-        document.getElementById("docs-card")?.classList.add("!row-span-1");
-        document
-            .getElementById("docs-card-content")
-            ?.classList.add("!flex-row");
-        document.getElementById("background")?.classList.add("!hidden");
-    };
+   
 
     const [loaded, setLoaded] = useState(false);
 
@@ -20,7 +11,7 @@ export default function Welcome({ auth }) {
     }, []);
 
     return (
-        <div>
+        <div className="relative pb-10">
             <Head title="RideHub" />
             
             <nav className="bg-[#1e1613e5]">
@@ -29,7 +20,7 @@ export default function Welcome({ auth }) {
               <a href="/">
                 <h1 className="text-3xl font-bold text-white ">
                   Ride
-                  <span className="px-2 text-black bg-orange-500 rounded-lg">
+                  <span className="px-2 text-black font-extrabold bg-orange-500 rounded-lg">
                     Hub
                   </span>
                 </h1>
@@ -108,11 +99,11 @@ export default function Welcome({ auth }) {
                     ) : (
                         <>
                             <Link href={route("login")} >
-                                <li className="px-4 text-black bg-orange-500 rounded-lg">Log in</li>
+                                <li className="px-4 text-black font-mono bg-orange-500 rounded-lg">Log in</li>
                             </Link>
                             <Link
                                 href={route("register")}
-                                className="px-4 text-white bg-black rounded-lg"
+                                className="px-4 text-white font-mono bg-black rounded-lg"
                             >
                                 Register
                             </Link>
@@ -132,7 +123,7 @@ export default function Welcome({ auth }) {
           loaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        Ride<span className="bg-orange-500 text-black px-2 rounded-lg">Hub</span>
+        Ride<span className="bg-orange-500 font-extrabold text-black px-2 rounded-lg">Hub</span>
       </h1>
 
       <h1
