@@ -99,11 +99,11 @@ export default function Welcome({ auth }) {
                     ) : (
                         <>
                             <Link href={route("login")} >
-                                <li className="px-4 text-black font-mono bg-orange-500 rounded-lg">Log in</li>
+                                <li className="px-4 text-black  bg-orange-500 rounded-lg">Log in</li>
                             </Link>
                             <Link
                                 href={route("register")}
-                                className="px-4 text-white font-mono bg-black rounded-lg"
+                                className="px-4 text-white  bg-black rounded-lg"
                             >
                                 Register
                             </Link>
