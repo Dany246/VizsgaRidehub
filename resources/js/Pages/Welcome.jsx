@@ -94,7 +94,8 @@ export default function Welcome({ auth }) {
                             href={route("dashboard")}
                             className="text-black"
                         >
-                            Dashboard
+                           
+                           <li className="px-4 text-black  bg-orange-500 rounded-lg">Profile</li>
                         </Link>
                     ) : (
                         <>
