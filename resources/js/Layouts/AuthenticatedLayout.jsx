@@ -12,7 +12,7 @@ export default function AuthenticatedLayout({ header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 ">
+        <div className="min-h-screen bg-stone-950 ">
             <nav className=" bg-black ">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-black ">
                     <div className="flex h-16 justify-between ">
@@ -64,7 +64,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                         <Dropdown.Link
                                             href={route('profile.edit')}
                                         >
-                                            Profile
+                                            Edit Profile
                                         </Dropdown.Link>
                                         <Dropdown.Link
                                             href={route('logout')}
