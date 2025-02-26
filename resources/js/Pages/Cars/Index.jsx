@@ -2,9 +2,7 @@ import React from "react";
 import { Head, Link } from "@inertiajs/react";
 import { useState } from "react";
 
-const Carspage = ({ auth }) => {
-
-    const [cars, setCars] = useState([]);
+const Carspage = ({ auth, cars }) => {
 
     return (
         <>
@@ -70,7 +68,7 @@ const Carspage = ({ auth }) => {
                                     Drivers
                                 </li>
                             </Link>
-                            <Link href={route("carspage")}>
+                            <Link href={route("cars.index")}>
                                 <li className="duration-700 text-md hover:ml-2">
                                     Cars
                                 </li>
@@ -87,7 +85,7 @@ const Carspage = ({ auth }) => {
                             <Link to="/drivers">
                                 <li> Drivers</li>
                             </Link>
-                            <Link href={route("carspage")}>
+                            <Link href={route("cars.index")}>
                                 <li>Cars</li>
                             </Link>
                             <Link to="/feedback">
@@ -125,42 +123,47 @@ const Carspage = ({ auth }) => {
 
             <h1 className="text-4xl font-bold p-12 text-center">Cars</h1>
 
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-stone-950 dark:border-stone-950">
-                <a href="#">
-                    <img class="rounded-t-lg" src="img/cars/Sil1.webp" alt="" />
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-yellow-600 dark:text-yellow-600">
-                            Noteworthy technology acquisitions 2021
-                        </h5>
-                    </a>
-                    <p class="mb-3 font-normal text-yellow-700 dark:text-yellow-700">
-                        Here are the biggest enterprise technology acquisitions
-                        of 2021 so far, in reverse chronological order.
-                    </p>
-                    <a
-                        href="#"
-                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-yellow-600 bg-yellow-700 rounded-lg hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-300 dark:bg-stone-600 dark:hover:bg-stone-700 dark:focus:ring-stone-800"
-                    >
-                        Ride
-                        <svg
-                            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 14 10"
-                        >
-                            <path
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M1 5h12m0 0L9 1m4 4L9 9"
-                            />
-                        </svg>
-                    </a>
-                </div>
+            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-stone-950 dark:border-stone-950">
+                {cars ? cars.map((car) => (
+                    <div key={car.id}>
+                        <a href="#">
+                            <img className="rounded-t-lg" src="img/cars/Sil1.webp" alt="" />
+                        </a>
+                        <div className="p-5">
+                            <a href="#">
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-yellow-600 dark:text-yellow-600">
+                                    {car.cartype}
+                                </h5>
+                            </a>
+                            <p className="mb-3 font-normal text-yellow-700 dark:text-yellow-700">
+                                {car.price} {car.license_plate} {car.status} {car.color}
+                            </p>
+                            <a
+                                href="#"
+                                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-yellow-600 bg-yellow-700 rounded-lg hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-300 dark:bg-stone-600 dark:hover:bg-stone-700 dark:focus:ring-stone-800"
+                            >
+                                Ride
+                                <svg
+                                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 14 10"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                )) : (
+                    <p>No cars available</p>
+                )}
             </div>
         </>
     );

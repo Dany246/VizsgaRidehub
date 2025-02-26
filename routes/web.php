@@ -15,17 +15,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/carspage', function () {
-
-    return Inertia::render('Carspage');
-    
-
-})->name('carspage');
-
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
-
-
-
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
