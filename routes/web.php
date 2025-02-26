@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -14,11 +15,15 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/cars', function () {
+Route::get('/carspage', function () {
 
-    return Inertia::render('Cars');
+    return Inertia::render('Carspage');
+    
 
-})->name('cars');
+})->name('carspage');
+
+Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+
 
 
 

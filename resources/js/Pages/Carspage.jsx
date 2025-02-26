@@ -1,7 +1,11 @@
 import React from "react";
 import { Head, Link } from "@inertiajs/react";
+import { useState } from "react";
 
-const Cars = ({ auth }) => {
+const Carspage = ({ auth }) => {
+
+    const [cars, setCars] = useState([]);
+
     return (
         <>
             <Head title="RideHub" />
@@ -66,7 +70,7 @@ const Cars = ({ auth }) => {
                                     Drivers
                                 </li>
                             </Link>
-                            <Link href={route("cars")}>
+                            <Link href={route("carspage")}>
                                 <li className="duration-700 text-md hover:ml-2">
                                     Cars
                                 </li>
@@ -83,7 +87,7 @@ const Cars = ({ auth }) => {
                             <Link to="/drivers">
                                 <li> Drivers</li>
                             </Link>
-                            <Link href={route("cars")}>
+                            <Link href={route("carspage")}>
                                 <li>Cars</li>
                             </Link>
                             <Link to="/feedback">
@@ -162,4 +166,4 @@ const Cars = ({ auth }) => {
     );
 };
 
-export default Cars;
+export default Carspage;
