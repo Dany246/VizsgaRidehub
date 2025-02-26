@@ -68,7 +68,7 @@ export default function Welcome({ auth }) {
                 <Link to="/drivers">
                   <li className="duration-700 text-md hover:ml-2">Drivers</li>
                 </Link>
-                <Link to="/cars">
+                <Link href={route("carspage")}>
                   <li className="duration-700 text-md hover:ml-2">Cars</li>
                 </Link>
                 <Link to="/feedback">
@@ -81,7 +81,7 @@ export default function Welcome({ auth }) {
                 <Link to="/drivers">
                   <li> Drivers</li>
                 </Link>
-                <Link to="/cars">
+                <Link href={route("carspage")}>
                   <li>Cars</li>
                 </Link>
                 <Link to="/feedback">
@@ -94,7 +94,8 @@ export default function Welcome({ auth }) {
                             href={route("dashboard")}
                             className="text-black"
                         >
-                            Dashboard
+                           
+                           <li className="px-4 text-black  bg-orange-500 rounded-lg">Profile</li>
                         </Link>
                     ) : (
                         <>

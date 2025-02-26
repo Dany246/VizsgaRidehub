@@ -1,0 +1,24 @@
+[
+{
+    "cartype": "Sedan",
+    "price": 15000,
+    "lisence_plate": "ABC123",
+    "status": true,
+    "color": "Red"
+    
+},
+{
+    "cartype": "Sedan",
+    "price": 15000,
+    "lisence_plate": "ABC123",
+    "status": true,
+    "color": "Red"
+},
+{
+    "cartype": "Sedan",
+    "price": 15000,
+    "lisence_plate": "ABC123",
+    "status": true,
+    "color": "Red"
+}
+]
