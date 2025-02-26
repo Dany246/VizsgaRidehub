@@ -123,11 +123,12 @@ const Carspage = ({ auth, cars }) => {
 
             <h1 className="text-4xl font-bold p-12 text-center">Cars</h1>
 
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-stone-950 dark:border-stone-950">
+           
+            <div className="grid grid-cols-1 px-20 sm:grid-cols-2 md:grid-cols-4 gap-24">
                 {cars ? cars.map((car) => (
-                    <div key={car.id}>
+                    <div key={car.id} className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-stone-950 dark:border-stone-950">
                         <a href="#">
-                            <img className="rounded-t-lg" src={car.img} alt="" />
+                            <img className="rounded-t-lg w-full h-[300px]" src={car.img} alt="" />
                         </a>
                         <div className="p-5">
                             <a href="#">
@@ -136,7 +137,7 @@ const Carspage = ({ auth, cars }) => {
                                 </h5>
                             </a>
                             <p className="mb-3 font-normal text-yellow-700 dark:text-yellow-700">
-                                {car.price} {car.license_plate} {car.status} {car.color}
+                                {car.price} <br /> {car.license_plate} <br /> {car.status} <br /> {car.color}
                             </p>
                             <a
                                 href="#"

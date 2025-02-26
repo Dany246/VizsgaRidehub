@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('img');
             $table->string('cartype');
             $table->integer('price');
-            $table->string('lisence_plate');
+            $table->string('license_plate');
             $table->boolean('status');
             $table->string('color');
             $table->timestamps();

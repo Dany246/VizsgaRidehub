@@ -2,7 +2,7 @@
 {
     "cartype": "Nissan Silvia",
     "price": 15000,
-    "lisence_plate": "ABC123",
+    "license_plate": "ABC-123",
     "status": true,
     "color": "White",
     "img": "img/Cars/Silvia.webp"
@@ -10,23 +10,23 @@
 {
     "cartype": "Chevrolet Charger",
     "price": 15000,
-    "lisence_plate": "ABC123",
+    "license_plate": "WBS-397",
     "status": true,
     "color": "Black",
-    "img": "img/Cars/Charger.webp"
+    "img": "img/Cars/Charger.jpg"
 },
 {
     "cartype": "Skoda Octavia",
     "price": 15000,
-    "lisence_plate": "ABC123",
+    "license_plate": "SAJ-252",
     "status": true,
-    "color": "Lightgray",
+    "color": "Blue",
     "img": "img/Cars/Octavia.jpg"
 },
 {
     "cartype": "BMW M46",
     "price": 15000,
-    "lisence_plate": "ABC123",
+    "license_plate": "PXR-865",
     "status": true,
     "color": "Black",
     "img": "img/Cars/BMW.webp"
@@ -34,7 +34,7 @@
 {
     "cartype": "Volkswagen Caravelle",
     "price": 15000,
-    "lisence_plate": "ABC123",
+    "license_plate": "IQH-880",
     "status": true,
     "color": "Black",
     "img": "img/Cars/Caravelle.jpg"
@@ -42,7 +42,7 @@
 {
     "cartype": "Volkswagen Caddy",
     "price": 15000,
-    "lisence_plate": "ABC123",
+    "license_plate": "WRL-057",
     "status": true,
     "color": "White",
     "img": "img/Cars/Caddy.jpg"
@@ -50,7 +50,7 @@
 {
     "cartype": "Ford Focus",
     "price": 15000,
-    "lisence_plate": "ABC123",
+    "license_plate": "IMA-483",
     "status": true,
     "color": "Gray",
     "img": "img/Cars/Focus.webp"
@@ -58,7 +58,7 @@
 {
     "cartype": "Opel Astra",
     "price": 15000,
-    "lisence_plate": "ABC123",
+    "license_plate": "GTX-050",
     "status": true,
     "color": "Gray",
     "img": "img/Cars/Astra.jpg"
