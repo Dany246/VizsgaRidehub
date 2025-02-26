@@ -127,11 +127,11 @@ const Carspage = ({ auth, cars }) => {
                 {cars ? cars.map((car) => (
                     <div key={car.id}>
                         <a href="#">
-                            <img className="rounded-t-lg" src="img/cars/Sil1.webp" alt="" />
+                            <img className="rounded-t-lg" src={car.img} alt="" />
                         </a>
                         <div className="p-5">
                             <a href="#">
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-yellow-600 dark:text-yellow-600">
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-yellow-700 dark:text-yellow-700">
                                     {car.cartype}
                                 </h5>
                             </a>
@@ -140,7 +140,7 @@ const Carspage = ({ auth, cars }) => {
                             </p>
                             <a
                                 href="#"
-                                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-yellow-600 bg-yellow-700 rounded-lg hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-300 dark:bg-stone-600 dark:hover:bg-stone-700 dark:focus:ring-stone-800"
+                                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-yellow-700 bg-yellow-700 rounded-lg hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-300 dark:bg-stone-700 dark:hover:bg-stone-700 dark:focus:ring-stone-800"
                             >
                                 Ride
                                 <svg
