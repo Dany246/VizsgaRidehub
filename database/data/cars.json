@@ -2,7 +2,7 @@
 {
     "cartype": "Nissan Silvia",
     "price": 15000,
-    "license_plate": "ABC-123",
+    "license_plate": "JBZ-717",
     "status": true,
     "color": "White",
     "img": "img/Cars/Silvia.webp"
@@ -13,7 +13,7 @@
     "license_plate": "WBS-397",
     "status": true,
     "color": "Black",
-    "img": "img/Cars/Charger.jpg"
+    "img": "img/Cars/Charger.webp"
 },
 {
     "cartype": "Skoda Octavia",
@@ -53,7 +53,7 @@
     "license_plate": "IMA-483",
     "status": true,
     "color": "Gray",
-    "img": "img/Cars/Focus.webp"
+    "img": "img/Cars/Focus.jpg"
 },
 {
     "cartype": "Opel Astra",
