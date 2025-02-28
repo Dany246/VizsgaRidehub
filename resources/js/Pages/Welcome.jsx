@@ -194,7 +194,9 @@ export default function Welcome({ auth }) {
       <div className={`text-center transition-opacity duration-1000 delay-1000 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}>
+          <Link href={route("cars.index")} >
         <p className="text-2xl font-bold text-white"><a className="duration-500 hover:text-3xl" href="/order">⮚ Order a ride<span className="bg-orange-500 text-black p-1 rounded-lg">Here</span> ⮘</a></p>
+        </ Link>
       </div>
  </div>
     

@@ -1,6 +1,5 @@
 import React from "react";
 import { Head, Link } from "@inertiajs/react";
-import { useState } from "react";
 
 const Carspage = ({ auth, cars }) => {
 
@@ -55,8 +54,7 @@ const Carspage = ({ auth, cars }) => {
                                     </li>
                                 </Link>
                                 <Link
-                                    to="
-                  /login"
+                                    to="/login"
                                 >
                                     <li className="px-4 text-black duration-300 bg-orange-500 rounded-lg text-md hover:text-lg">
                                         Login
@@ -124,18 +122,14 @@ const Carspage = ({ auth, cars }) => {
             <h1 className="text-4xl font-bold p-12 text-center">Cars</h1>
 
            
-            <div className="grid grid-cols-1 px-20 sm:grid-cols-2 md:grid-cols-4 gap-24 mb-10">
+            <div className="grid grid-cols-1 gap-4 m-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
                 {cars ? cars.map((car) => (
-                    <div key={car.id} className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-stone-950 dark:border-stone-950">
-                        <a href="#">
-                            <img className="rounded-t-lg w-full h-[250px]" src={car.img} alt="" />
-                        </a>
+                    <div key={car.id} className="bg-white border border-gray-200 max-w-[375px] rounded-lg dark:bg-stone-950 dark:border-stone-950">
+                            <img className="rounded-t-lg w-full h-[280px]" src={car.img} alt="" />
                         <div className="p-5">
-                            <a href="#">
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-yellow-700 dark:text-yellow-700">
                                     {car.cartype}
                                 </h5>
-                            </a>
                             <p className="mb-3 font-normal text-yellow-700 dark:text-yellow-700">
                                 {car.price} <br /> {car.license_plate} <br /> {car.status} <br /> {car.color}
                             </p>

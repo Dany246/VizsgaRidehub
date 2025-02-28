@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
-
+Route::get('/drivers', [DriverController::class, 'index']) ->name('drivers.index');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
