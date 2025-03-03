@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,10 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/feedback', function () {
+    return Inertia::render('Feedback');
+})->name('feedback.index');
 
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 Route::get('/drivers', [DriverController::class, 'index']) ->name('drivers.index');

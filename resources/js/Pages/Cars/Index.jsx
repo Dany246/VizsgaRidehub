@@ -124,7 +124,7 @@ const Carspage = ({ auth, cars }) => {
            
             <div className="grid grid-cols-1 gap-4 m-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
                 {cars ? cars.map((car) => (
-                    <div key={car.id} className="bg-white border border-gray-200 max-w-[375px] rounded-lg dark:bg-stone-950 dark:border-stone-950">
+                    <div key={car.id} className="bg-stone-950 border border-stone-950 max-w-[375px] rounded-lg dark:bg-stone-950 dark:border-stone-950">
                             <img className="rounded-t-lg w-full h-[280px]" src={car.img} alt="" />
                         <div className="p-5">
                                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-yellow-700 dark:text-yellow-700">
