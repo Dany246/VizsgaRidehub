@@ -48,20 +48,20 @@ const Carspage = ({ auth, cars }) => {
                             id="nav-items"
                         >
                             <div className="flex flex-col mb-4 text-center gap-[6px] min-h-[40%]">
-                                <Link to="/signup">
+                                <Link href="/signup">
                                     <li className="duration-300 text-md hover:text-lg">
                                         Sign up
                                     </li>
                                 </Link>
                                 <Link
-                                    to="/login"
+                                    href="/login"
                                 >
                                     <li className="px-4 text-black duration-300 bg-orange-500 rounded-lg text-md hover:text-lg">
                                         Login
                                     </li>
                                 </Link>
                             </div>
-                            <Link to="/drivers">
+                            <Link href="/drivers">
                                 <li className="duration-700 text-md hover:ml-2">
                                     Drivers
                                 </li>
@@ -71,7 +71,7 @@ const Carspage = ({ auth, cars }) => {
                                     Cars
                                 </li>
                             </Link>
-                            <Link to="/feedback">
+                            <Link href="/feedback">
                                 <li className="duration-700 text-md hover:ml-2">
                                     Feedback
                                 </li>
@@ -80,13 +80,13 @@ const Carspage = ({ auth, cars }) => {
                     </div>
                     <div className="hidden list-none lg:flex lg:items-center lg:justify-between lg:space-x-10 lg:mr-10">
                         <div className="flex gap-8 mr-10">
-                            <Link to="/drivers">
+                            <Link href="/drivers">
                                 <li> Drivers</li>
                             </Link>
                             <Link href={route("cars.index")}>
                                 <li>Cars</li>
                             </Link>
-                            <Link to="/feedback">
+                            <Link href="/feedback">
                                 <li> Feedback </li>
                             </Link>
                         </div>
@@ -135,7 +135,7 @@ const Carspage = ({ auth, cars }) => {
                             </p>
                             <a
                                 href="#"
-                                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-yellow-700 bg-yellow-700 rounded-lg hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-300 dark:bg-stone-700 dark:hover:bg-stone-700 dark:focus:ring-stone-800"
+                                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center  text-yellow-700 bg-stone-700 rounded-lg hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-800 dark:bg-stone-700 dark:hover:bg-stone-700 dark:focus:ring-stone-800"
                             >
                                 Ride
                                 <svg

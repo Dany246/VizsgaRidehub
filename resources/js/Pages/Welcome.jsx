@@ -58,8 +58,7 @@ export default function Welcome({ auth }) {
                   <Link href="/signup">
                     <li className="duration-300 text-md hover:text-lg">Sign up</li>
                   </Link>
-                  <Link href="
-                  /login">
+                  <Link href="/login">
                     <li className="px-4 text-black duration-300 bg-orange-500 rounded-lg text-md hover:text-lg">
                       Login
                     </li>
@@ -145,8 +144,7 @@ export default function Welcome({ auth }) {
           className="flex flex-col items-center  border  rounded-lg shadow md:flex-row md:max-w-xl  border-yellow-950 bg-orange-500 hover:bg-orange-600 sm:w-1/2"
         >
           <img
-            className="object-cover w-full h-full rounded-t-lg md:h-full md:w-48 md
-            :rounded-none md:rounded-l-lg hidden sm:block"
+            className="object-cover w-full h-full rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg hidden sm:block"
             src="img/Bence.jpg"
             alt=""
           />
@@ -167,7 +165,7 @@ export default function Welcome({ auth }) {
           className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-yellow-950 bg-orange-500 hover:bg-orange-600 sm:w-1/2" 
         >
           <img
-            className="object-cover w-full h-auto rounded-t-lg md:h-full md:w-48 md:rounded-none md:rounded-l-lg hidden sm:block"
+            className="object-cover w-full h-auto rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg hidden sm:block"
             src="img/Dani.jpg"
             alt=""
           />
@@ -194,11 +192,10 @@ export default function Welcome({ auth }) {
       <div className={`text-center transition-opacity duration-1000 delay-1000 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}>
-          <Link href={route("cars.index")} >
-        <p className="text-2xl font-bold text-white"><a className="duration-500 hover:text-3xl" href="/order">⮚ Order a ride<span className="bg-orange-500 text-black p-1 rounded-lg">Here</span> ⮘</a></p>
-        </ Link>
+          <p className="text-2xl font-bold text-white">Order a ride <span className="bg-orange-500 text-black p-1 rounded-lg">Here</span></p>
       </div>
  </div>
     
   );
 }
+
