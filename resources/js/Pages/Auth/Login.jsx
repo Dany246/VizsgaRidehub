@@ -2,6 +2,7 @@ import Checkbox from '@/Components/Checkbox';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
+import SignupButton from '@/Components/SignupButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
@@ -36,12 +37,12 @@ export default function Login({ status, canResetPassword }) {
                     <InputLabel htmlFor="email" value="Email" />
 
                     <TextInput
-                    
+
                         id="email"
                         type="email"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
+                       className="mt-1 block w-full border-yellow-500 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 text-black"
                         autoComplete="username"
                         isFocused={true}
                         onChange={(e) => setData('email', e.target.value)}
@@ -58,7 +59,7 @@ export default function Login({ status, canResetPassword }) {
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full border-yellow-500 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 text-black"
                         autoComplete="current-password"
                         onChange={(e) => setData('password', e.target.value)}
                     />
@@ -85,7 +86,7 @@ export default function Login({ status, canResetPassword }) {
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            className="rounded-md text-sm text-gray-600 underline hover:text-stone-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
                             Forgot your password?
                         </Link>
@@ -94,6 +95,13 @@ export default function Login({ status, canResetPassword }) {
                     <PrimaryButton className="ms-4" disabled={processing}>
                         Log in
                     </PrimaryButton>
+                </div>
+                <div className='flex flex-col items-center justify-center gap-2 mt-6 p-2'>
+                    <p className='text-gray-500 md:py-2 text-center text-sm md:text-base'>If you don't have an account sign up here:</p>
+                    <Link href={route("register")}><SignupButton disabled={processing}>
+                        Sign up
+                    </SignupButton>
+                    </Link>
                 </div>
             </form>
         </GuestLayout>
