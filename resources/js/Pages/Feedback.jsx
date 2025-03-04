@@ -1,12 +1,25 @@
-import { Link } from "@inertiajs/react";
-import React from 'react'
+import { useState } from 'react'
+import { Rating } from 'react-simple-star-rating'
 
-const Feedback = () => {
+const  Feedback= () =>  {
+  const [rating, setRating] = useState(4)
+
+  // Catch Rating value
+  const handleRating = (rate) => {
+    setRating(rate)
+
+    // other logic
+  }
+  // Optinal callback functions
   return (
-    <div>
-      
+    <div className="">
+      <Rating
+        onClick={handleRating}
+        initialValue={rating}
+        
+        /* Available Props */
+      />
     </div>
   )
 }
-
-export default Feedback
+export default Feedback;
