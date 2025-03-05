@@ -5,7 +5,7 @@ const StarRating = ({ totalStars = 5 }) => {
   const [hover, setHover] = useState(0);
 
   return (
-    <div className="flex gap-2 text-4xl justify-center cursor-pointer">
+    <div className="flex  text-xl justify-center cursor-pointer">
       {[...Array(totalStars)].map((_, index) => {
         const starValue = index + 1;
 
