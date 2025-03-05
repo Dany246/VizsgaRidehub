@@ -1,7 +1,7 @@
 import Navbar from "@/Components/Navbar";
 import { Head } from "@inertiajs/react";
 import { useEffect, useState } from "react";
-import Feedback from "./Feedback";
+
 
 export default function Welcome({ auth }) {
 
@@ -16,7 +16,7 @@ export default function Welcome({ auth }) {
     <div className="relative pb-10">
       <Head title="RideHub" />
 
-      <Navbar />
+      <Navbar auth={auth} />
 
       <h1
         className={`text-4xl font-bold my-8 text-center text-white transition-opacity duration-1000 delay-100 ${loaded ? "opacity-100" : "opacity-0"

@@ -19,10 +19,10 @@ export default function Dashboard() {
                 <div className={`text-xl font-semibold text-center leading-tight text-white transition-opacity duration-1000 delay-100 ${
                     loaded ? "opacity-100" : "opacity-0"
                   }`}>
-                    <h1 className='text-2xl p-2'>Profile <span className='text-yellow-600'>Datas:</span></h1> <br />
+                    <h1 className='text-2xl p-2'>Profile <span className='text-orange-600'>Datas:</span></h1> <br />
                     {user.name} <br />
                     {user.email} <br />
-                    Thank you for using our service <span className='font-bold text-yellow-700'>{}</span> times. <br />
+                    Thank you for using our service <span className='font-bold text-orange-700'>{}</span> times. <br />
                    
                  
                 </div>
@@ -35,7 +35,7 @@ export default function Dashboard() {
           loaded ? "opacity-100" : "opacity-0"
         }`}>
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-yellow-700 shadow-sm sm:rounded-lg">
+                    <div className="overflow-hidden bg-orange-600 shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
                             You're logged in!
                         </div>
