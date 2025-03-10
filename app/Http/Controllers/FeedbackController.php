@@ -27,7 +27,7 @@ class FeedbackController extends Controller
 
     public function index()
     {
-        $feedbacks = Feedback::all();
+        $feedbacks = Feedback::with('user')->get();
 
         return Inertia::render('Feedback', [
             'feedbacks' => $feedbacks
