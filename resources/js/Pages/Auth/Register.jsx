@@ -40,7 +40,7 @@ export default function Register() {
                         id="name"
                         name="name"
                         value={data.name}
-                        className="  mt-1 block w-full focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:ring-offset-2"
+                        className="  mt-1 block w-full border-yellow-500 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 text-black"
                         autoComplete="name"
                         isFocused={true}
                         onChange={(e) => setData('name', e.target.value)}
@@ -58,7 +58,7 @@ export default function Register() {
                         type="email"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:ring-offset-2"
+                        className="mt-1 block w-full border-yellow-500 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 text-black"
                         autoComplete="username"
                         onChange={(e) => setData('email', e.target.value)}
                         required
@@ -75,7 +75,7 @@ export default function Register() {
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:ring-offset-"
+                        className="mt-1 block w-full border-yellow-500 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 text-black"
                         autoComplete="new-password"
                         onChange={(e) => setData('password', e.target.value)}
                         required
@@ -95,7 +95,7 @@ export default function Register() {
                         type="password"
                         name="password_confirmation"
                         value={data.password_confirmation}
-                        className="mt-1 block w-full focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:ring-offset-2"
+                        className="mt-1 block w-full border-yellow-500 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 text-black"
                         autoComplete="new-password"
                         onChange={(e) =>
                             setData('password_confirmation', e.target.value)
