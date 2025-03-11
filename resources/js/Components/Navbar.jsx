@@ -56,7 +56,7 @@ const Navbar = ({ auth }) => {
                                     </li>
                                 </Link>
                             </div>
-                            <Link href="/drivers">
+                            <Link href={route("drivers.index")}>
                                 <li className="duration-700 text-md hover:ml-2">
                                     Drivers
                                 </li>

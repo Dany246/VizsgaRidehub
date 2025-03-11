@@ -36,7 +36,7 @@ export default function Welcome({ auth }) {
           }`}
       >
         <a
-          href="/drivers"
+          href={route("drivers.index")}
           className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-yellow-950 bg-orange-500 hover:bg-orange-600 sm:w-1/2"
         >
           <div className="md:flex md:flex-col md:items-center md:justify-center">
@@ -57,7 +57,7 @@ export default function Welcome({ auth }) {
           </div>
         </a>
         <a
-          href="/drivers"
+          href={route("drivers.index")}
           className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-yellow-950 bg-orange-500 hover:bg-orange-600 sm:w-1/2"
         >
           <div className="md:flex md:flex-col md:items-center md:justify-center">
