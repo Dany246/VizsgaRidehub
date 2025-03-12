@@ -19,4 +19,15 @@ class DriverController extends Controller
 
     }
 
+    public function update(Request $request, $id) {
+        $driver = Driver::find($id);
+
+        if (!$driver) {
+            return back()->with(['message' => 'driver not found.']);
+        }
+
+        $driver->update($request->all('status'));
+
+        return back()->with(['message' => 'Done']);
+    }
 }

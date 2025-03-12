@@ -4,13 +4,13 @@
         "pictureP": "img/Dani.jpg",
         "name": "Éri Tibor Dániel",
         "description" : "a",
-        "status":true
+        "status":false
     },
     {
         "picture": "",
         "pictureP": "img/Bence.jpg",
         "name": "Tóth Bence",
-        "description" : "a",
+        "description" : "",
         "status":true
     }
 ]

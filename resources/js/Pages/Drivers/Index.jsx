@@ -11,14 +11,12 @@ const Driverspage = ({ auth, drivers }) => {
 
             <h1 className="text-4xl font-bold p-12 text-center">Drivers</h1>
             <div className="flex flex-wrap justify-evenly">
-                <Drivercard drivers={drivers} />
+                {drivers && drivers.length > 0 ? drivers.map((driver) => (
+                    <Drivercard driver={driver} key={driver.id} />
+                )) : (
+                    <p>No Drivers found.</p>
+                )}
             </div>
-
-
-
-
-
-
         </div>
     );
 };
