@@ -17,6 +17,9 @@ const Driverspage = ({ auth, drivers }) => {
                     <p>No Drivers found.</p>
                 )}
             </div>
+            <div className={`text-center pt-32`}>
+                <p className="text-2xl font-bold text-white"><a className="duration-500 hover:text-3xl" href="/cars">⮚ Order a ride<span className="bg-orange-500 text-black p-1 rounded-lg">Here</span> ⮘</a></p>
+            </div>
         </div>
     );
 };
