@@ -3,6 +3,7 @@
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,8 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 Route::get('/drivers', [DriverController::class, 'index'])->name('drivers.index');

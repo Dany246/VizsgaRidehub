@@ -5,7 +5,7 @@ import Navbar from "@/Components/Navbar";
 const Carspage = ({ auth, cars }) => {
     return (
         <>
-            <Head title="Cars" />
+            <Head title="RideHub" />
 
             <Navbar auth={auth} />
 

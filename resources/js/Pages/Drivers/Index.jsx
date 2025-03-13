@@ -6,7 +6,7 @@ import Drivercard from "@/Components/Drivercard";
 const Driverspage = ({ auth, drivers }) => {
     return (
         <div>
-            <Head title="Drivers" />
+            <Head title="RideHub" />
             <Navbar auth={auth} />
 
             <h1 className="text-4xl font-bold p-12 text-center">Drivers</h1>
@@ -18,7 +18,7 @@ const Driverspage = ({ auth, drivers }) => {
                 )}
             </div>
             <div className={`text-center pt-32`}>
-                <p className="text-2xl font-bold text-white"><a className="duration-500 hover:text-3xl" href="/cars">⮚ Order a ride<span className="bg-orange-500 text-black p-1 rounded-lg">Here</span> ⮘</a></p>
+                <p className="text-2xl font-bold text-white"><a className="duration-500 hover:text-3xl" href="/order">⮚ Order a ride<span className="bg-orange-500 text-black p-1 rounded-lg">Here</span> ⮘</a></p>
             </div>
         </div>
     );

@@ -15,9 +15,10 @@ const StarRating = ({ auth, feedbacks }) => {
         e.preventDefault();
         post(route("feedback.store"));
     }
-    
+
     return (
         <>
+            <Head title="RideHub" />
             <Navbar auth={auth} />
             <div className="max-w-lg mx-auto p-4">
                 <h2 className="text-xl font-bold text-center">Ratings & Comments</h2>
