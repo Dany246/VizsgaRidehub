@@ -30,6 +30,19 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Profile
                                 </NavLink>
+                                <NavLink 
+                                    href={route('drivers.index')}
+                                    active={route().current('dashboard')}
+                                >
+                                    Drivers
+                                </NavLink>
+                                <NavLink 
+                                    href={route('feedback.index')}
+                                    active={route().current('dashboard')}
+                                >
+                                    Feedback
+                                </NavLink>
+                            
                             </div>
                         </div>
 
