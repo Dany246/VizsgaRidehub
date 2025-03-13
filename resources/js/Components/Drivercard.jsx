@@ -7,7 +7,7 @@ const Drivercard = ({ driver }) => {
     }
     
     return (
-        <div className="flex flex-wrap w-2/3 gap-4">
+        <div className="flex flex-wrap gap-3">
             <div
                 key={driver.id}
                 className="max-w-2xl mx-auto sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-8 px-8 bg-orange-600 shadow-xl rounded-lg text-gray-900"
@@ -27,13 +27,13 @@ const Drivercard = ({ driver }) => {
                     ></img>
                 </div>
                 <div className="text-center mt-2">
-                    <h2 className="font-semibold">{driver.name}</h2>
-                    <p className="text-stone-900">{driver.status == true ? (<span>anyam</span>) : (<span>apam</span>) }</p>
+                    <h2 className="font-bold text-xl">{driver.name}</h2>
+                    <p className="bg-stone-800 mb-1 rounded">{driver.status == true ? (<span className="text-green-600">Avaliable</span>) : (<span className="text-red-600">Unavaliable</span>) }</p>
                 </div>
                 <hr className="border-[1px] border-orange-900" />
                 <div className="p-6 mx-8 mt-2">
                     <button type="submit" onClick={handleStatusChange} className="w-full block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2">
-                        Drive
+                        Driver information
                     </button>
                 </div>
             </div>

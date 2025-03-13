@@ -80,7 +80,7 @@ export default function Welcome({ auth }) {
         </a>
       </div>
       <h4
-        className={`my-20 text-xl w-[60%] m-auto font-bold text-center text-white  transition-opacity duration-1000 delay-700 ${loaded ? "opacity-100" : "opacity-0"
+        className={`my-16 text-xl w-[60%] m-auto font-bold text-center text-white  transition-opacity duration-1000 delay-700 ${loaded ? "opacity-100" : "opacity-0"
           }`}
       >
         This project is a web application for find a ride, anywhere you want to go. Our project's goal, to help people who are in a hurry and don't have a car, here they can find a safe and quick way to get to their destination.
