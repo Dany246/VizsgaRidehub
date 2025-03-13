@@ -28,7 +28,7 @@ const Drivercard = ({ driver }) => {
                 </div>
                 <div className="text-center mt-2">
                     <h2 className="font-bold text-xl">{driver.name}</h2>
-                    <p className="bg-stone-800 mb-1 rounded">{driver.status == true ? (<span className="text-green-600">Avaliable</span>) : (<span className="text-red-600">Unavaliable</span>) }</p>
+                    <p className="bg-stone-800 mt-2 mb-1 rounded">{driver.status == true ? (<span className="text-green-600">Avaliable</span>) : (<span className="text-red-600">Unavaliable</span>) }</p>
                 </div>
                 <hr className="border-[1px] border-orange-900" />
                 <div className="p-6 mx-8 mt-2">
