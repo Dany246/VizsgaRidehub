@@ -20,7 +20,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+
 
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 Route::get('/drivers', [DriverController::class, 'index'])->name('drivers.index');
@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
     Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 });
