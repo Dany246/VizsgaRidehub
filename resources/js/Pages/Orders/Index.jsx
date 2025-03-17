@@ -8,6 +8,7 @@ const Orderspage = ({ auth }) => {
             <Head title="RideHub" />
             <Navbar auth={auth} />
 
+
         </div>
     )
 }
