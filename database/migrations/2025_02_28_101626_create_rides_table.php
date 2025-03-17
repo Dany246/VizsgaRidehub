@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer("user_id");
             $table->timestamp('start');
             $table->timestamp('end');
-            $table->integer('period');
             $table->integer('distance');
+            $table->boolean('payment');
             $table->boolean('status');
         });
     }
