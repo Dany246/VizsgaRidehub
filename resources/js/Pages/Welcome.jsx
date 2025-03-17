@@ -42,27 +42,6 @@ export default function Welcome({ auth }) {
           <div className="md:flex md:flex-col md:items-center md:justify-center">
             <img
               className="object-cover w-full h-auto rounded-t-lg md:h-auto md:w-48 mt-3 md:rounded-lg hidden sm:block md:mx-auto md:mb-4"
-              src="img/Bence.jpg"
-              alt=""
-            />
-            <div className="flex flex-col justify-between p-4 leading-normal md:text-center md:justify-center">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-black">
-                Tóth Bence
-              </h5>
-              <p className="mb-3 font-normal text-justify text-gray-900">
-                I am 25 years old from Hajdú-Bihar county, from Hungary. I
-                learning software development at Szigeti Endre vocational school in
-                Szeghalom.
-              </p></div>
-          </div>
-        </a>
-        <a
-          href={route("drivers.index")}
-          className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-yellow-950 bg-orange-500 hover:bg-orange-600 sm:w-1/2"
-        >
-          <div className="md:flex md:flex-col md:items-center md:justify-center">
-            <img
-              className="object-cover w-full h-auto rounded-t-lg md:h-auto md:w-48 mt-3 md:rounded-lg hidden sm:block md:mx-auto md:mb-4"
               src="img/Dani.jpg"
               alt=""
             />
@@ -76,6 +55,27 @@ export default function Welcome({ auth }) {
                 Szeghalom.
               </p>
             </div>
+          </div>
+        </a>
+        <a
+          href={route("drivers.index")}
+          className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-yellow-950 bg-orange-500 hover:bg-orange-600 sm:w-1/2"
+        >
+          <div className="md:flex md:flex-col md:items-center md:justify-center">
+            <img
+              className="object-cover w-full h-auto rounded-t-lg md:h-auto md:w-48 mt-3 md:rounded-lg hidden sm:block md:mx-auto md:mb-4"
+              src="img/Bence.jpg"
+              alt=""
+            />
+            <div className="flex flex-col justify-between p-4 leading-normal md:text-center md:justify-center">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-black">
+                Tóth Bence
+              </h5>
+              <p className="mb-3 font-normal text-justify text-gray-900">
+                I am 25 years old from Hajdú-Bihar county, from Hungary. I
+                learning software development at Szigeti Endre vocational school in
+                Szeghalom.
+              </p></div>
           </div>
         </a>
       </div>
