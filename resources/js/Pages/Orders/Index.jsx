@@ -5,13 +5,16 @@ import { SettlementsChoosing } from './settlementsChoosing'
 
 const Orderspage = ({ auth, settlements }) => {
     return (
-        <div>
-            <Head title="RideHub" />
-            <Navbar auth={auth} />
-            <SettlementsChoosing settlements={settlements} />
+        <>
+            <div>
+                <Head title="RideHub" />
+                <Navbar auth={auth} />
 
-        </div>
-    )
+            </div>
+            <div className='flex flex-wrap justify-center'>
+                <SettlementsChoosing settlements={settlements} />
+            </div>
+        </>)
 }
 
 export default Orderspage

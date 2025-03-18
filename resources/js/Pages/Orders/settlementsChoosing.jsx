@@ -27,26 +27,27 @@ export function SettlementsChoosing({ settlements }) {
   return (
       <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
-              <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] justify-between">
+              <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] text-black justify-between">
+                  {name ? settlements.find((settlement) => settlement.name === name).name : "Select Settlement"}
                   <ChevronsUpDown className="opacity-50" />
               </Button>
           </PopoverTrigger>
           <PopoverContent className="w-[200px] p-0">
               <Command>
-                  <CommandInput placeholder="Search framework..." className="h-9" />
+                  <CommandInput placeholder="Search settlements..." className="h-9" />
                   <CommandList>
                       {settlements && settlements.length > 0 ? (
                           <CommandGroup>
                               {settlements.map((settlement) => (
                                   <CommandItem
-                                      key={settlement.name}
+                                      key={settlement.id}
                                       value={settlement.name}
                                       onSelect={(currentName) => {
                                           setName(currentName);
                                           setOpen(false);
                                       }}
                                   >
-                                      {settlement.label}
+                                      {settlement.name}
                                       <Check
                                           className={cn(
                                               "ml-auto",

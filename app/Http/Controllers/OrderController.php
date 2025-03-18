@@ -16,7 +16,7 @@ class OrderController extends Controller
 
         return Inertia::render('Orders/Index', [
             // 'orders' => $orders
-            'settlements ' => $settlements
+            'settlements' => $settlements
         ]);
 
     }
