@@ -42,7 +42,7 @@ export function SettlementsChoosing({ settlements }) {
                                       key={settlement.name}
                                       value={settlement.name}
                                       onSelect={(currentName) => {
-                                          setValue(currentName);
+                                          setName(currentName);
                                           setOpen(false);
                                       }}
                                   >
