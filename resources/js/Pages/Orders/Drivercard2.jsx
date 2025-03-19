@@ -1,23 +1,21 @@
 import { router } from "@inertiajs/react";
-import React, { useState } from "react";
+
 
 const Drivercard = ({ driver }) => {
-    const [selected, setSelected] = useState(false);
+  
 
     const handleStatusChange = () => {
         router.patch(`/drivers/${driver.id}`, { status: driver.status === 1 ? 0 : 1 });
     };
 
-    const toggleSelection = () => {
-        setSelected(!selected);
-    };
+    
 
     return (
         <div className="flex flex-col-1 gap-3">
             <div
                 key={driver.id}
                 className={`max-w-2xl mx-auto sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-8 px-8 shadow-xl rounded-lg text-gray-900 
-                ${selected ? "bg-orange-500" : "bg-orange-600"}`}
+                bg-orange-500`}
             >
                 <div className="rounded-t-lg h-32 overflow-hidden">
                     <img className="object-cover object-top w-full" src={driver.picture} alt="" />
@@ -29,9 +27,9 @@ const Drivercard = ({ driver }) => {
                     <h2 className="font-bold text-xl">{driver.name}</h2>
                     <p className="bg-stone-800 mt-2 mb-1 rounded">
                         {driver.status == true ? (
-                            <span className="text-green-600">Available</span>
+                            <span className="text-white">Not Selected</span>
                         ) : (
-                            <span className="text-red-600">Unavailable</span>
+                            <span className="text-green-600">Selected</span>
                         )}
                     </p>
                 </div>
@@ -42,16 +40,9 @@ const Drivercard = ({ driver }) => {
                         onClick={handleStatusChange}
                         className="w-full block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2"
                     >
-                        Driver information
+                        Select Driver
                     </button>
-                    <button
-                        onClick={toggleSelection}
-                        className={`w-full block mx-auto mt-2 rounded-full px-6 py-2 font-semibold ${
-                            selected ? "bg-orange-700 text-white" : "bg-gray-300 text-black"
-                        }`}
-                    >
-                        {selected ? "Deselect" : "Select"}
-                    </button>
+                  
                 </div>
             </div>
         </div>
