@@ -29,7 +29,7 @@ export function SettlementsChoosing({ settlements }) {
     return (
         <div className="flex flex-col bg-color-stone p-12">
             <p className="text-4xl m-auto p-5">Finish your order</p>
-            <div className="flex flex-col p-8 bg-orange-950 bg-opacity-20 rounded-2xl">
+            <div className="flex flex-wrap p-8">
                 <div className="flex gap-2 m-auto">
                     <p>From:</p>
                     <Popover open={fromOpen} onOpenChange={setFromOpen}>
