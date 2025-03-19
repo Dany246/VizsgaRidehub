@@ -1,21 +1,17 @@
+import { useState } from "react";
 import { router } from "@inertiajs/react";
 
-
 const Drivercard = ({ driver }) => {
-  
 
     const handleStatusChange = () => {
         router.patch(`/drivers/${driver.id}`, { status: driver.status === 1 ? 0 : 1 });
     };
 
-    
-
     return (
-        <div className="flex flex-col-1 m-auto gap-3">
+        <div className={`flex flex-col-1 m-auto gap-3`}>
             <div
                 key={driver.id}
-                className={`max-w-2xl m-auto mt-8 px-8 shadow-xl rounded-lg text-gray-900 
-                ${selected ? "bg-orange-500" : "bg-orange-600"}`}
+                className="max-w-2xl m-auto mt-8 px-8 shadow-xl rounded-lg text-gray-900 bg-orange-500"
             >
                 <div className="rounded-t-lg h-32 overflow-hidden">
                     <img className="object-cover object-top w-full" src={driver.picture} alt="" />
@@ -36,13 +32,12 @@ const Drivercard = ({ driver }) => {
                 <hr className="border-[1px] border-orange-900" />
                 <div className="p-6 mx-8 mt-2">
                     <button
-                        type="submit"
+                        type="button"
                         onClick={handleStatusChange}
                         className="w-full block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2"
                     >
                         Select Driver
                     </button>
-                  
                 </div>
             </div>
         </div>

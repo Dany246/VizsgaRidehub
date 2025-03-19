@@ -27,7 +27,7 @@ export function SettlementsChoosing({ settlements }) {
     const [toName, setToName] = React.useState("");
 
     return (
-        <div className="flex flex-col bg-color-stone p-12">
+        <div className="flex flex-col bg-color-stone py-12">
             <p className="text-4xl m-auto p-5">Finish your order</p>
             <div className="flex flex-wrap p-8">
                 <div className="flex gap-2 m-auto">
