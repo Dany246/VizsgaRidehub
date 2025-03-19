@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Check, ChevronsUpDown } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import * as React from "react";
+import { Check, ChevronsUpDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
     Command,
     CommandEmpty,
@@ -12,49 +11,54 @@ import {
     CommandInput,
     CommandItem,
     CommandList,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "@/components/ui/popover"
-
+} from "@/components/ui/popover";
 
 export function SettlementsChoosing({ settlements }) {
-    const [open, setOpen] = React.useState(false);
-    const [name, setName] = React.useState("");
+    // Külön állapotokat hozunk létre
+    const [fromOpen, setFromOpen] = React.useState(false);
+    const [fromName, setFromName] = React.useState("");
+
+    const [toOpen, setToOpen] = React.useState(false);
+    const [toName, setToName] = React.useState("");
 
     return (
-        <div className="flex flex-col max-width-1200 bg-color-stone p-6 justify-center gap-10">
-            <div>
+        <div className="flex flex-col bg-color-stone p-12">
+            <p className="text-xl m-auto p-5">Finish your order</p>
+            <div className="flex flex-wrap gap-2 p-8 bg-orange-950 bg-opacity-20 rounded-2xl">
                 <p>From:</p>
-                <Popover open={open} onOpenChange={setOpen}>
+                <Popover open={fromOpen} onOpenChange={setFromOpen}>
                     <PopoverTrigger asChild>
-                        <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] text-black justify-between">
-                            {name ? settlements.find((settlement) => settlement.name === name).name : "Select Settlement"}
+                        <Button variant="outline" role="combobox" aria-expanded={fromOpen} className="w-[200px] mr-10 bg-stone-300 hover:bg-stone-200 border-none text-black justify-between">
+                            {fromName ? settlements.find((settlement) => settlement.name === fromName)?.name : "Select Settlement"}
                             <ChevronsUpDown className="opacity-50" />
                         </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-[200px] p-0">
-                        <Command>
-                            <CommandInput placeholder="Search settlements..." className="h-9" />
+                        <Command className="bg-stone-200">
+                            <CommandInput placeholder="Search settlements..." className="h-9 bg-white" />
                             <CommandList>
-                                {settlements && settlements.length > 0 ? (
-                                    <CommandGroup>
+                                {settlements.length > 0 ? (
+                                    <CommandGroup className="bg-stone-200">
                                         {settlements.map((settlement) => (
                                             <CommandItem
+                                                className="bg-stone-200 hover:bg-stone-300"
                                                 key={settlement.id}
                                                 value={settlement.name}
                                                 onSelect={(currentName) => {
-                                                    setName(currentName);
-                                                    setOpen(false);
+                                                    setFromName(currentName);
+                                                    setFromOpen(false);
                                                 }}
                                             >
                                                 {settlement.name}
                                                 <Check
                                                     className={cn(
                                                         "ml-auto",
-                                                        name === settlement.name ? "opacity-100" : "opacity-0"
+                                                        fromName === settlement.name ? "opacity-100" : "opacity-0"
                                                     )}
                                                 />
                                             </CommandItem>
@@ -67,36 +71,35 @@ export function SettlementsChoosing({ settlements }) {
                         </Command>
                     </PopoverContent>
                 </Popover>
-            </div>
-            <div>
+
                 <p>To:</p>
-                <Popover open={open} onOpenChange={setOpen}>
+                <Popover open={toOpen} onOpenChange={setToOpen}>
                     <PopoverTrigger asChild>
-                        <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] text-black justify-between">
-                            {name ? settlements.find((settlement) => settlement.name === name).name : "Select Settlement"}
+                        <Button variant="outline" role="combobox" aria-expanded={toOpen} className="w-[200px] bg-stone-300 hover:bg-stone-200 border-none text-black justify-between">
+                            {toName ? settlements.find((settlement) => settlement.name === toName)?.name : "Select Settlement"}
                             <ChevronsUpDown className="opacity-50" />
                         </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-[200px] p-0">
-                        <Command>
-                            <CommandInput placeholder="Search settlements..." className="h-9" />
+                    <Command className="bg-stone-200">
+                    <CommandInput placeholder="Search settlements..." className="h-9 bg-white" />
                             <CommandList>
-                                {settlements && settlements.length > 0 ? (
-                                    <CommandGroup>
+                                {settlements.length > 0 ? (
+                                    <CommandGroup className="bg-stone-200">
                                         {settlements.map((settlement) => (
-                                            <CommandItem
+                                            <CommandItem className="bg-stone-200 hover:bg-stone-300"
                                                 key={settlement.id}
                                                 value={settlement.name}
                                                 onSelect={(currentName) => {
-                                                    setName(currentName);
-                                                    setOpen(false);
+                                                    setToName(currentName);
+                                                    setToOpen(false);
                                                 }}
                                             >
                                                 {settlement.name}
                                                 <Check
                                                     className={cn(
                                                         "ml-auto",
-                                                        name === settlement.name ? "opacity-100" : "opacity-0"
+                                                        toName === settlement.name ? "opacity-100" : "opacity-0"
                                                     )}
                                                 />
                                             </CommandItem>
