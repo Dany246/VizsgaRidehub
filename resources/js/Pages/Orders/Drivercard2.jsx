@@ -11,11 +11,11 @@ const Drivercard = ({ driver }) => {
     
 
     return (
-        <div className="flex flex-col-1 gap-3">
+        <div className="flex flex-col-1 m-auto gap-3">
             <div
                 key={driver.id}
-                className={`max-w-2xl mx-auto sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-8 px-8 shadow-xl rounded-lg text-gray-900 
-                bg-orange-500`}
+                className={`max-w-2xl m-auto mt-8 px-8 shadow-xl rounded-lg text-gray-900 
+                ${selected ? "bg-orange-500" : "bg-orange-600"}`}
             >
                 <div className="rounded-t-lg h-32 overflow-hidden">
                     <img className="object-cover object-top w-full" src={driver.picture} alt="" />
