@@ -3,8 +3,11 @@ import { Head } from '@inertiajs/react'
 import React from 'react'
 import { SettlementsChoosing } from './settlementsChoosing'
 import DriversChoosing from './driversChoosing'
+import { OrderButton } from './OrderButton'
 
 const Orderspage = ({ auth, settlements, drivers }) => {
+    
+    
     return (
         <>
             <div>
@@ -15,7 +18,11 @@ const Orderspage = ({ auth, settlements, drivers }) => {
             <div className='flex flex-wrap justify-center'>
                 <SettlementsChoosing settlements={settlements} />
                 <DriversChoosing drivers={drivers} />
+                <OrderButton driver={drivers}/>
+                
             </div>
+
+
         </>)
 }
 

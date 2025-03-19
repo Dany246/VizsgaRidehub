@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Driver;
 use App\Models\Order;
 use App\Models\Settlement;
 use Illuminate\Http\Request;
@@ -13,10 +14,12 @@ class OrderController extends Controller
     {
         // $orders = Order::all();
         $settlements = Settlement::all();
+        $driver = Driver::all();
 
         return Inertia::render('Orders/Index', [
             // 'orders' => $orders
-            'settlements' => $settlements
+            'settlements' => $settlements,
+            'drivers'=>$driver
         ]);
 
     }

@@ -1,10 +1,13 @@
 import React from 'react'
+import Drivercard2 from './Drivercard2'
 
-const DriversChoosing = (drivers) => {
+
+const DriversChoosing = ({drivers}) => {
+      
   return (
     <div className="flex flex-wrap justify-evenly">
                 {drivers && drivers.length > 0 ? drivers.map((driver) => (
-                    <Drivercard driver={driver} key={driver.id} />
+                    <Drivercard2 driver={driver} key={driver.id} />
                 )) : (
                     <p>No Drivers found.</p>
                 )}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Head, Link } from "@inertiajs/react";
 import Navbar from "@/Components/Navbar";
-import Drivercard from "@/Components/Drivercard";
+import Drivercard from "@/Pages/Drivers/Drivercard";
 
 const Driverspage = ({ auth, drivers }) => {
     return (
