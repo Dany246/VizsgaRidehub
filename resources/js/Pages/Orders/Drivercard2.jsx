@@ -13,11 +13,11 @@ const Drivercard = ({ driver }) => {
     };
 
     return (
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col-1 gap-3">
             <div
                 key={driver.id}
                 className={`max-w-2xl mx-auto sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-8 px-8 shadow-xl rounded-lg text-gray-900 
-                ${selected ? "bg-green-500" : "bg-orange-600"}`}
+                ${selected ? "bg-orange-500" : "bg-orange-600"}`}
             >
                 <div className="rounded-t-lg h-32 overflow-hidden">
                     <img className="object-cover object-top w-full" src={driver.picture} alt="" />
@@ -47,7 +47,7 @@ const Drivercard = ({ driver }) => {
                     <button
                         onClick={toggleSelection}
                         className={`w-full block mx-auto mt-2 rounded-full px-6 py-2 font-semibold ${
-                            selected ? "bg-blue-700 text-white" : "bg-gray-300 text-black"
+                            selected ? "bg-orange-700 text-white" : "bg-gray-300 text-black"
                         }`}
                     >
                         {selected ? "Deselect" : "Select"}

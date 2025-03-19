@@ -8,7 +8,7 @@ export const OrderButton = ({driver}) => {
     }
   return (
     <div className="p-6 mx-8 mt-2">
-    <button type="submit" onClick={handleStatusChange} className="w-full block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2">
+    <button type="button" onClick={handleStatusChange} className="w-full block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2">
         Driver information
     </button>
 </div>

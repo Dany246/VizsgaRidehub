@@ -15,7 +15,7 @@ const Orderspage = ({ auth, settlements, drivers }) => {
                 <Navbar auth={auth} />
 
             </div>
-            <div className='flex flex-wrap justify-center'>
+            <div className='flex flex-col justify-center'>
                 <SettlementsChoosing settlements={settlements} />
                 <DriversChoosing drivers={drivers} />
                 <OrderButton driver={drivers}/>
