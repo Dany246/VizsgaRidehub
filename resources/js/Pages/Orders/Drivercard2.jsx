@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { router } from "@inertiajs/react";
 
-const Drivercard = ({ driver }) => {
+const Drivercard = ({ driver, setData }) => {
 
     const handleStatusChange = () => {
+        setData('driver', driver.id);
         router.patch(`/drivers/${driver.id}`, { status: driver.status === 1 ? 0 : 1 });
     };
 

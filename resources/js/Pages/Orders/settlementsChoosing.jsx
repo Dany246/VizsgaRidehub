@@ -18,13 +18,11 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover";
 
-export function SettlementsChoosing({ settlements }) {
+export function SettlementsChoosing({ settlements, settlementFromValue, setSettlementFromValue, settlementToValue, setSettlementToValue }) {
     // Külön állapotokat hozunk létre
     const [fromOpen, setFromOpen] = React.useState(false);
-    const [fromName, setFromName] = React.useState("");
 
     const [toOpen, setToOpen] = React.useState(false);
-    const [toName, setToName] = React.useState("");
 
     return (
         <div className="flex flex-col bg-color-stone py-12">
@@ -35,7 +33,7 @@ export function SettlementsChoosing({ settlements }) {
                     <Popover open={fromOpen} onOpenChange={setFromOpen}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" role="combobox" aria-expanded={fromOpen} className="bg-stone-300 hover:bg-stone-200 border-none text-black justify-between">
-                                {fromName ? settlements.find((settlement) => settlement.name === fromName)?.name : "Select Settlement"}
+                                {settlementFromValue ? settlements.find((settlement) => settlement.name === settlementFromValue)?.name : "Select Settlement"}
                                 <ChevronsUpDown className="opacity-50" />
                             </Button>
                         </PopoverTrigger>
@@ -51,7 +49,7 @@ export function SettlementsChoosing({ settlements }) {
                                                     key={settlement.id}
                                                     value={settlement.name}
                                                     onSelect={(currentName) => {
-                                                        setFromName(currentName);
+                                                        setSettlementFromValue('settlement_from', currentName);
                                                         setFromOpen(false);
                                                     }}
                                                 >
@@ -59,7 +57,7 @@ export function SettlementsChoosing({ settlements }) {
                                                     <Check
                                                         className={cn(
                                                             "ml-auto",
-                                                            fromName === settlement.name ? "opacity-100" : "opacity-0"
+                                                            settlementFromValue === settlement.name ? "opacity-100" : "opacity-0"
                                                         )}
                                                     />
                                                 </CommandItem>
@@ -78,7 +76,7 @@ export function SettlementsChoosing({ settlements }) {
                     <Popover open={toOpen} onOpenChange={setToOpen}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" role="combobox" aria-expanded={toOpen} className="bg-stone-300 hover:bg-stone-200 border-none text-black justify-between">
-                                {toName ? settlements.find((settlement) => settlement.name === toName)?.name : "Select Settlement"}
+                                {settlementToValue ? settlements.find((settlement) => settlement.name === settlementToValue)?.name : "Select Settlement"}
                                 <ChevronsUpDown className="opacity-50" />
                             </Button>
                         </PopoverTrigger>
@@ -93,7 +91,7 @@ export function SettlementsChoosing({ settlements }) {
                                                     key={settlement.id}
                                                     value={settlement.name}
                                                     onSelect={(currentName) => {
-                                                        setToName(currentName);
+                                                        setSettlementToValue('settlement_to', currentName);
                                                         setToOpen(false);
                                                     }}
                                                 >
@@ -101,7 +99,7 @@ export function SettlementsChoosing({ settlements }) {
                                                     <Check
                                                         className={cn(
                                                             "ml-auto",
-                                                            toName === settlement.name ? "opacity-100" : "opacity-0"
+                                                            settlementToValue === settlement.name ? "opacity-100" : "opacity-0"
                                                         )}
                                                     />
                                                 </CommandItem>
