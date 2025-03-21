@@ -4,7 +4,7 @@ import {  usePage } from '@inertiajs/react';
 import { useState, useEffect } from 'react';
 
 
-export default function Dashboard() {
+export default function Dashboard({auth}) {
     const user = usePage().props.auth.user;
 
         const [loaded, setLoaded] = useState(false);
@@ -42,6 +42,11 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
+            {auth.user.role === 'driver' && (
+        <a href="/driver-dashboard" className="text-blue-500">
+          Check Orders
+        </a>
+      )}
         </AuthenticatedLayout>
     );
 }

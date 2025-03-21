@@ -5,6 +5,7 @@ use App\Http\Controllers\DriverController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Driver;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -29,6 +30,10 @@ Route::patch("/drivers/{id}", [DriverController::class, 'update'])->name('driver
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/driver-dashboard', function () {
+    return Inertia::render('DriverUser/DriverDashboard');
+})->middleware(['auth']);
 
 
 Route::middleware('auth')->group(function () {
