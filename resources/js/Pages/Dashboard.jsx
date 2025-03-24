@@ -16,13 +16,13 @@ export default function Dashboard({auth}) {
     return (
         <AuthenticatedLayout
             header={ 
-                <div className={`text-xl font-semibold text-center leading-tight text-white transition-opacity duration-1000 delay-100 ${
+                <div className={`text-xl my-20 font-semibold text-center leading-tight text-white transition-opacity duration-1000 delay-100 ${
                     loaded ? "opacity-100" : "opacity-0"
                   }`}>
-                    <h1 className='text-2xl p-2'>Profile <span className='text-orange-600'>Datas:</span></h1> <br />
+                    <h1 className='text-2xl p-2 my-20'>Profile<span className='bg-orange-500 font-bold text-black px-2 rounded-lg'>Datas:</span></h1> <br />
                     {user.name} <br />
                     {user.email} <br />
-                    Thank you for using our service <span className='font-bold text-orange-700'>{}</span> times. <br />
+                    <p>Thank you for using our service.</p>
                    
                  
                 </div>
@@ -31,19 +31,9 @@ export default function Dashboard({auth}) {
         >
             <Head title="Dashboard" />
 
-            <div className={`text-center p-60 transition-opacity duration-1000 delay-300 ${
-          loaded ? "opacity-100" : "opacity-0"
-        }`}>
-                <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-orange-600 shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">
-                            You're logged in!
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
             {auth.user.role === 'driver' && (
-        <a href="/driver-dashboard" className="text-blue-500">
+        <a href="/driver-dashboard" className="flex justify-center text-black font-bold mt-32 text-center w-2/12 mx-auto bg-orange-600 py-2 px-4 rounded">
           Check Orders
         </a>
       )}

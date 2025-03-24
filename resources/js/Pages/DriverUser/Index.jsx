@@ -23,7 +23,7 @@ import {
             <div>
                 <Navbar auth={auth} />
                 {orders && orders.length > 0 ? (
-                    <Table>
+                    <Table className="w-5/6 mx-auto mt-5">
                         <TableCaption>A list of Orders.</TableCaption>
                         <TableHeader>
                             <TableRow>
@@ -48,7 +48,7 @@ import {
                         </TableBody>
                     </Table>
                 ) : (
-                    <p>No orders found.</p>
+                    <p className='text-center mt-8 text-2xl'>No orders found.</p>
                 )}
             </div>
         </>
