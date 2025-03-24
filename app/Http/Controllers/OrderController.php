@@ -27,6 +27,8 @@ class OrderController extends Controller
 
     }
 
+  
+
     public function store(Request $request)
     {
         $request->validate([
@@ -44,5 +46,10 @@ class OrderController extends Controller
         $order->save();
 
         return back()->with(['message' => 'Done']);
+    }
+
+    public function getData(){
+        $data['data'] = Order::all();
+        return Inertia::render('DriverUser/DriverDashboard', $data);
     }
 }

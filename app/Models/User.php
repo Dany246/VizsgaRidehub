@@ -53,4 +53,9 @@ class User extends Authenticatable
 
     return $this->role === 'driver';
 }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

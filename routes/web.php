@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\DriverUserController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
@@ -31,9 +32,6 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/driver-dashboard', function () {
-    return Inertia::render('DriverUser/DriverDashboard');
-})->middleware(['auth']);
 
 
 Route::middleware('auth')->group(function () {
@@ -44,6 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
     Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+
+    Route::get('/driver-dashboard', [DriverUserController::class, 'index'])->name('driveruser.index');
 });
 
 

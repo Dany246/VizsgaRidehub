@@ -30,8 +30,8 @@ const Orderspage = ({ auth, settlements, drivers, cars }) => {
             <form onSubmit={handleSubmit} className='flex flex-col justify-center'>
                 <SettlementsChoosing settlements={settlements} settlementFromValue={data.settlement_from} setSettlementFromValue={setData} settlementToValue={data.settlement_to} setSettlementToValue={setData} />
                 <DriversChoosing drivers={drivers} data={data.driver} setData={setData} />
-                <OrderButton />
                 <CarChoosing cars={cars} data={data.car} setData={setData} />
+                <OrderButton />
             </form>
 
 

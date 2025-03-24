@@ -24,7 +24,7 @@ const CarChoosing = ({cars, data, setData}) => {
   return (
     <Popover open={carOpen} onOpenChange={setCarOpen}>
     <PopoverTrigger asChild>
-        <Button variant="outline" role="combobox" aria-expanded={carOpen} className="bg-stone-300 hover:bg-stone-200 border-none text-black justify-between">
+        <Button variant="outline" role="combobox" aria-expanded={carOpen} className="bg-stone-300 hover:bg-stone-200 w-1/3 m-auto rounded-3xl border-none text-black justify-center">
             {data ? cars.find((car) => car.cartype === data)?.cartype : "Select Car"}
             <ChevronsUpDown className="opacity-50" />
         </Button>

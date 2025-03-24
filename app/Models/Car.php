@@ -7,4 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     //
+    public function order() {
+        return $this->hasMany(Order::class);
+    }
 }
