@@ -42,7 +42,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
     Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
-
     Route::get('/driver-dashboard', [DriverUserController::class, 'index'])->name('driveruser.index');
 });
 

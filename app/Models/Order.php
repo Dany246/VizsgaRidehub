@@ -9,10 +9,10 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'car_id', 'from', 'to', 'driver_id'];
+    protected $fillable = ['car_id', 'from', 'to', 'driver_id'];
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function driver(){
+        return $this->belongsTo(Driver::class);
     }
 
     public function car(){
