@@ -5,7 +5,7 @@
     "license_plate": "SAJ-252",
     "status": true,
     "color": "Gray",
-    "img": "img/Cars/Skoda.webp"
+    "img": "img/Cars/SkodaOctavia.webp"
 },
 {
     "cartype": "BMW E46",
@@ -13,7 +13,7 @@
     "license_plate": "PXR-865",
     "status": true,
     "color": "Black",
-    "img": "img/Cars/BMW.webp"
+    "img": "img/Cars/BmwE46.webp"
 },
 {
     "cartype": "Volkswagen Caravelle",
@@ -21,7 +21,7 @@
     "license_plate": "IQH-880",
     "status": true,
     "color": "Black",
-    "img": "img/Cars/Caravelle.jpg"
+    "img": "img/Cars/VwCaravelle.webp"
 },
 {
     "cartype": "Ford Focus",
@@ -29,7 +29,7 @@
     "license_plate": "IMA-483",
     "status": true,
     "color": "Gray",
-    "img": "img/Cars/Focus.jpg"
+    "img": "img/Cars/FordFocus.webp"
 },
 {
     "cartype": "Volkswagen Caddy",
@@ -45,6 +45,6 @@
     "license_plate": "GTX-050",
     "status": true,
     "color": "Gray",
-    "img": "img/Cars/Astra.jpg"
+    "img": "img/Cars/OpelAstra.webp"
 }
 ]

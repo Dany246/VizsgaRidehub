@@ -28,8 +28,9 @@ const Carspage = ({ auth, cars }) => {
                                     {car.cartype}
                                 </h5>
                                 <p className="pl-1 font-normal text-yellow-700 dark:text-yellow-700">
-                                    {car.price} <br /> {car.license_plate}
-                                    <br /> {car.status} <br /> {car.color}
+                                    {car.price} <br /> 
+                                    {car.license_plate} <br /> 
+                                    {car.color}
                                 </p>
                             </div>
                         </div>
