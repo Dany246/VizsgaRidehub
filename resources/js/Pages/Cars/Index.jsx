@@ -9,7 +9,8 @@ const Carspage = ({ auth, cars }) => {
 
             <Navbar auth={auth} />
 
-            <h1 className="text-4xl font-bold p-12 text-center">Cars</h1>
+            <h1 className="text-4xl font-bold pt-6 text-center">Cars</h1>
+            <p className="text-center pb-6">(The images are illustrations)</p>
 
             <div className="grid grid-cols-1 gap-4 mb-5 m-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
                 {cars ? (

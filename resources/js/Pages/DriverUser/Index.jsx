@@ -25,8 +25,6 @@ import {
 } from "@/components/ui/alert-dialog";
 
 export default function Index({ orders, auth }) {
-    console.log(orders);
-
     const handleDelete = async (orderId) => {
         if (!orderId) return;
     

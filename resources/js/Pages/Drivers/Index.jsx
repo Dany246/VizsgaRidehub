@@ -16,7 +16,7 @@ const Driverspage = ({ auth, drivers }) => {
         <>
         <Navbar auth={auth} />
         <h1
-        className={`mt-4 text-2xl font-bold text-center text-white my-14  transition-opacity duration-1000 delay-300 ${loaded ? "opacity-100" : "opacity-0"
+        className={`pt-8 text-2xl font-bold text-center text-white my-14  transition-opacity duration-1000 delay-300 ${loaded ? "opacity-100" : "opacity-0"
           }`}
       >
         Developers of the project:
@@ -69,6 +69,12 @@ const Driverspage = ({ auth, drivers }) => {
           </div>
         </a>
       </div>
+      <h1
+        className={`text-4xl font-bold pt-32 text-center text-white transition-opacity duration-1000 delay-100 ${loaded ? "opacity-100" : "opacity-0"
+          }`}
+      >
+        Ride<span className="bg-orange-500 font-extrabold text-black px-2 rounded-lg">Hub</span>
+      </h1>
       </>
     );
 };

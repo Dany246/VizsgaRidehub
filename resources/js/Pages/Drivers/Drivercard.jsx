@@ -1,4 +1,5 @@
 import { router } from "@inertiajs/react";
+import { Link } from "@inertiajs/react";
 import React from "react";
 
 const Drivercard = ({ driver }) => {
@@ -32,8 +33,10 @@ const Drivercard = ({ driver }) => {
                 </div>
                 <hr className="border-[1px] border-orange-900" />
                 <div className="p-6 mx-8 mt-2">
-                    <button type="submit" onClick={'/drivers'} className="w-full block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2">
-                        Driver information
+                    <button type="submit"  className="w-full block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2">
+                        <Link href={route("drivers.index")}>
+                            Driver information
+                        </Link>
                     </button>
                 </div>
             </div>
