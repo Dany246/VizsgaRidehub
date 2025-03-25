@@ -53,7 +53,7 @@ export default function AuthenticatedLayout({ header, children }) {
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center rounded-md border border-transparent bg-orange-700 px-3 py-2 text-sm font-medium leading-4 text-black transition duration-150 ease-in-out  focus:outline-none"
+                                                className="inline-flex items-center rounded-md border border-transparent bg-orange-600 px-3 py-2 text-sm font-medium leading-4 text-black transition duration-150 ease-in-out  focus:outline-none"
                                             >
                                                 {user.name}
 

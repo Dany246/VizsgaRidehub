@@ -9,6 +9,7 @@ class Order extends Model
 {
     use HasFactory;
 
+    
     protected $fillable = ['car_id', 'from', 'to', 'driver_id'];
 
     public function driver(){

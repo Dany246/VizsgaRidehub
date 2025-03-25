@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('rides', function (Blueprint $table) {
             $table->id();
-            $table->integer("driver_id");
-            $table->integer("car_id");
-            $table->integer("user_id");
+            $table->foreignId('driver_id')->constrained('drivers');;
+            $table->foreignId('car_id')->constrained('cars');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamp('start');
             $table->timestamp('end');
-            $table->integer('distance');
             $table->boolean('payment');
+            $table->string('price');
             $table->boolean('status');
         });
     }

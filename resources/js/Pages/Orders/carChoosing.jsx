@@ -25,13 +25,13 @@ const CarChoosing = ({cars, data, setData}) => {
     <Popover open={carOpen} onOpenChange={setCarOpen}>
     <PopoverTrigger asChild>
         <Button variant="outline" role="combobox" aria-expanded={carOpen} className="bg-stone-300 hover:bg-stone-200 w-1/3 m-auto rounded-3xl border-none text-black justify-center">
-            {data ? cars.find((car) => car.cartype === data)?.cartype : "Select Car"}
+            {data ? cars.find((car) => car.id === data)?.cartype : "Select Car"}
             <ChevronsUpDown className="opacity-50" />
         </Button>
     </PopoverTrigger>
     <PopoverContent className="w-[200px] p-0">
         <Command className="bg-stone-200">
-            <CommandInput placeholder="Search settlements..." className="h-9 bg-white" />
+            <CommandInput placeholder="Search cars..." className="h-9 bg-white" />
             <CommandList>
                 {cars.length > 0 ? (
                     <CommandGroup className="bg-stone-200">
@@ -39,7 +39,7 @@ const CarChoosing = ({cars, data, setData}) => {
                             <CommandItem
                                 className="bg-stone-200 hover:bg-stone-300"
                                 key={car.id}
-                                value={car.cartype}
+                                value={car.id}
                                 onSelect={() => {
                                     setData('car', car.id);
                                     setCarOpen(false);
@@ -49,7 +49,7 @@ const CarChoosing = ({cars, data, setData}) => {
                                 <Check
                                     className={cn(
                                         "ml-auto",
-                                        data === car.cartype ? "opacity-100" : "opacity-0"
+                                        data === car.id ? "opacity-100" : "opacity-0"
                                     )}
                                 />
                             </CommandItem>

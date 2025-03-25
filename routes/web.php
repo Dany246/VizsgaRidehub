@@ -6,7 +6,9 @@ use App\Http\Controllers\DriverUserController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RidesController;
 use App\Models\Driver;
+use App\Models\Order;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,6 +34,11 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/rides', function () {
+    return Inertia::render('Rides/Index');
+})->name('rides');
+
+Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
 
 
 Route::middleware('auth')->group(function () {
