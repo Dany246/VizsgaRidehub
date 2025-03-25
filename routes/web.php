@@ -27,7 +27,8 @@ Route::get('/', function () {
 
 
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
-Route::get('/drivers', [DriverController::class, 'index'])->name('drivers.index');
+Route::get('/', [DriverController::class, 'index'])->name('drivers.index');
+Route::get('/drivers',function () {return Inertia::render('Drivers/Index');})->name('drivers.index');
 Route::patch("/drivers/{id}", [DriverController::class, 'update'])->name('drivers.update');
   
 Route::get('/dashboard', function () {

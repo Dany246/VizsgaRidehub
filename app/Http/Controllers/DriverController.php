@@ -13,7 +13,7 @@ class DriverController extends Controller
     {
         $drivers = Driver::all();
 
-        return Inertia::render('Drivers/Index', [
+        return Inertia::render('Welcome', [
             'drivers' => $drivers
         ]);
 
