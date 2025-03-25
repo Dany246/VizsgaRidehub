@@ -45,7 +45,7 @@ const StarRating = ({ auth, feedbacks }) => {
                 {/* Komment beviteli mező */}
                 <form onSubmit={handleSubmit}>
                     <textarea
-                        className="w-full p-2 border border-orange-400 focus:border-orange-600 rounded-md resize-none text-black focus:ring-0"
+                        className="w-full p-2 border border-orange-600 focus:border-orange-500 rounded-md resize-none text-black focus:ring-0"
                         rows="3"
                         placeholder="Share your experience..."
                         value={data.comment}
@@ -54,7 +54,7 @@ const StarRating = ({ auth, feedbacks }) => {
 
                     {/* Beküldés gomb */}
                     <button
-                        className="mt-2 w-full bg-orange-400 text-black py-2 rounded-md hover:bg-orange-600 transition"
+                        className="mt-2 w-full bg-orange-600 text-black py-2 rounded-md hover:bg-orange-500 transition"
                         onClick={handleSubmit}
                         disabled={processing}
                     >
