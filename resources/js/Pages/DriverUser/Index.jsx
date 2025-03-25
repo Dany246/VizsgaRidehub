@@ -46,7 +46,7 @@ export default function Index({ orders, auth }) {
           
     
             
-            window.location.href = "/rides"; 
+            window.location.href =  window.location.href  ; 
         } catch (error) {
             console.error("Error deleting order:", error);
             alert("Error deleting order. Please try again.");
@@ -64,9 +64,7 @@ export default function Index({ orders, auth }) {
                         <TableCaption>A list of Orders.</TableCaption>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="w-[100px]">
-                                    Order ID
-                                </TableHead>
+                                
                                 <TableHead>Driver</TableHead>
                                 <TableHead>From</TableHead>
                                 <TableHead>To</TableHead>
@@ -76,9 +74,7 @@ export default function Index({ orders, auth }) {
                         <TableBody>
                             {orders.map((order) => (
                                 <TableRow key={order.id}>
-                                    <TableCell className="font-medium">
-                                        {order.id}
-                                    </TableCell>
+                                  
                                     <TableCell>{order.driver.name}</TableCell>
                                     <TableCell>{order.from}</TableCell>
                                     <TableCell>{order.to}</TableCell>
@@ -87,7 +83,7 @@ export default function Index({ orders, auth }) {
                                         <TableCell>
                                             <AlertDialogTrigger>
                                                 <button className="bg-orange-600 text-white p-2 rounded-lg">
-                                                    Take the order
+                                                    Finish order
                                                 </button>
                                             </AlertDialogTrigger>
                                         </TableCell>
@@ -95,8 +91,7 @@ export default function Index({ orders, auth }) {
                                         <AlertDialogContent className="bg-black">
                                             <AlertDialogHeader>
                                                 <AlertDialogTitle className="text-white">
-                                                    Are you sure you want to
-                                                    take the order?
+                                                Are you sure you want to finish the order?
                                                 </AlertDialogTitle>
                                                 <AlertDialogDescription>
                                                     This action cannot be
@@ -107,17 +102,14 @@ export default function Index({ orders, auth }) {
                                                 <AlertDialogCancel className="text-orange-600 bg-black hover:bg-stone-900 hover:text-orange-400">
                                                     Cancel
                                                 </AlertDialogCancel>
-                                                <AlertDialogAction className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900">
-                                                    <button
-                                                        onClick={() =>
+                                                <AlertDialogAction   onClick={() =>
                                                             handleDelete(
                                                                 order.id
                                                             )
-                                                        }
-                                                        className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900"
-                                                    >
-                                                        Continue
-                                                    </button>
+                                                        } className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900">
+                                                  
+                                                       Finish
+                                                    
                                                 </AlertDialogAction>
                                             </AlertDialogFooter>
                                         </AlertDialogContent>
