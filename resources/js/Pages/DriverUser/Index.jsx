@@ -1,8 +1,8 @@
-import Navbar from '@/Components/Navbar';
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
-import { usePage } from '@inertiajs/react';
-import { useState, useEffect } from 'react';
+import Navbar from "@/Components/Navbar";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { Head } from "@inertiajs/react";
+import { usePage } from "@inertiajs/react";
+import { useState, useEffect } from "react";
 import {
     Table,
     TableBody,
@@ -11,12 +11,49 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-  } from "@/components/ui/table"
-  
+} from "@/components/ui/table";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
-
-  export default function Index({ orders, auth }) {
+export default function Index({ orders, auth }) {
     console.log(orders);
+
+    const handleDelete = async (orderId) => {
+        if (!orderId) return;
+    
+        try {
+            const response = await fetch(`/orders/${orderId}`, {
+                method: "DELETE",
+                headers: {
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]')?.getAttribute("content"),
+                    "Content-Type": "application/json",
+                },
+            });
+    
+            if (!response.ok) {
+                throw new Error("Failed to delete order");
+            }
+    
+          
+    
+            
+            window.location.href = "/rides"; 
+        } catch (error) {
+            console.error("Error deleting order:", error);
+            alert("Error deleting order. Please try again.");
+        }
+    };
+    
+    
 
     return (
         <>
@@ -27,7 +64,9 @@ import {
                         <TableCaption>A list of Orders.</TableCaption>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="w-[100px]">Order ID</TableHead>
+                                <TableHead className="w-[100px]">
+                                    Order ID
+                                </TableHead>
                                 <TableHead>Driver</TableHead>
                                 <TableHead>From</TableHead>
                                 <TableHead>To</TableHead>
@@ -35,23 +74,64 @@ import {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {orders.map(order => (
+                            {orders.map((order) => (
                                 <TableRow key={order.id}>
-                                    <TableCell className="font-medium">{order.id}</TableCell>
+                                    <TableCell className="font-medium">
+                                        {order.id}
+                                    </TableCell>
                                     <TableCell>{order.driver.name}</TableCell>
                                     <TableCell>{order.from}</TableCell>
                                     <TableCell>{order.to}</TableCell>
                                     <TableCell>{order.car.cartype}</TableCell>
-                                
+                                    <AlertDialog>
+                                        <TableCell>
+                                            <AlertDialogTrigger>
+                                                <button className="bg-orange-600 text-white p-2 rounded-lg">
+                                                    Take the order
+                                                </button>
+                                            </AlertDialogTrigger>
+                                        </TableCell>
+
+                                        <AlertDialogContent className="bg-black">
+                                            <AlertDialogHeader>
+                                                <AlertDialogTitle className="text-white">
+                                                    Are you sure you want to
+                                                    take the order?
+                                                </AlertDialogTitle>
+                                                <AlertDialogDescription>
+                                                    This action cannot be
+                                                    undone.
+                                                </AlertDialogDescription>
+                                            </AlertDialogHeader>
+                                            <AlertDialogFooter>
+                                                <AlertDialogCancel className="text-orange-600 bg-black hover:bg-stone-900 hover:text-orange-400">
+                                                    Cancel
+                                                </AlertDialogCancel>
+                                                <AlertDialogAction className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900">
+                                                    <button
+                                                        onClick={() =>
+                                                            handleDelete(
+                                                                order.id
+                                                            )
+                                                        }
+                                                        className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900"
+                                                    >
+                                                        Continue
+                                                    </button>
+                                                </AlertDialogAction>
+                                            </AlertDialogFooter>
+                                        </AlertDialogContent>
+                                    </AlertDialog>
                                 </TableRow>
                             ))}
                         </TableBody>
                     </Table>
                 ) : (
-                    <p className='text-center mt-8 text-2xl'>No orders found.</p>
+                    <p className="text-center mt-8 text-2xl">
+                        No orders found.
+                    </p>
                 )}
             </div>
         </>
     );
 }
-

@@ -52,4 +52,17 @@ class OrderController extends Controller
         $data['data'] = Order::all();
         return Inertia::render('DriverUser/DriverDashboard', $data);
     }
+
+
+    public function destroy($id)
+    {
+        $order = Order::find($id);
+
+        if (!$order) {
+            return response()->json(['message' => 'Order not found'], 404);
+        }
+
+        $order->delete();
+        return response()->json(['message' => 'Order deleted successfully']);
+    }
 }
