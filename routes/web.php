@@ -39,9 +39,6 @@ Route::get('/rides', function () {
     return Inertia::render('Rides/Index');
 })->name('rides');
 
-Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -51,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
     Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
     Route::get('/driver-dashboard', [DriverUserController::class, 'index'])->name('driveruser.index');
+    Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
 });
 
 

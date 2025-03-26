@@ -1,6 +1,6 @@
 import Navbar from "@/Components/Navbar";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head } from "@inertiajs/react";
+import { Head, router } from "@inertiajs/react";
 import { usePage } from "@inertiajs/react";
 import { useState, useEffect } from "react";
 import {
@@ -25,33 +25,10 @@ import {
 } from "@/components/ui/alert-dialog";
 
 export default function Index({ orders, auth }) {
-    const handleDelete = async (orderId) => {
-        if (!orderId) return;
     
-        try {
-            const response = await fetch(`/orders/${orderId}`, {
-                method: "DELETE",
-                headers: {
-                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]')?.getAttribute("content"),
-                    "Content-Type": "application/json",
-                },
-            });
-    
-            if (!response.ok) {
-                throw new Error("Failed to delete order");
-            }
-    
-          
-    
-            
-            window.location.href =  window.location.href  ; 
-        } catch (error) {
-            console.error("Error deleting order:", error);
-            alert("Error deleting order. Please try again.");
-        }
-    };
-    
-    
+    const handleDelete = (id) => {
+        router.delete(`/orders/${id}`);
+    }
 
     return (
         <>

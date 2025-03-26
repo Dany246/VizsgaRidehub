@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("pictureP");
             $table->string('name');
             $table->string("description");
-            $table->boolean('status');
+            $table->boolean('status')->default(true);
         });
     }
 

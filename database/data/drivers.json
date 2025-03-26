@@ -3,14 +3,12 @@
         "picture": "",
         "pictureP": "img/Dani.jpg",
         "name": "Éri Tibor Dániel",
-        "description" : "a",
-        "status":false
+        "description" : "a"
     },
     {
         "picture": "",
         "pictureP": "img/Bence.jpg",
         "name": "Tóth Bence",
-        "description" : "",
-        "status":true
+        "description" : ""
     }
 ]

@@ -45,6 +45,14 @@ class OrderController extends Controller
         $order->driver_id = $request->driver;
         $order->save();
 
+        $driver = Driver::find($request->driver);
+
+        if (!$driver) {
+            return back()->with(['message' => 'driver not found.']);
+        }
+
+        $driver->update(['status' => 0]);
+
         return back()->with(['message' => 'Done']);
     }
 
@@ -62,7 +70,17 @@ class OrderController extends Controller
             return response()->json(['message' => 'Order not found'], 404);
         }
 
+        
         $order->delete();
-        return response()->json(['message' => 'Order deleted successfully']);
+
+        $driver = Driver::find($order->driver_id);
+
+        if (!$driver) {
+            return back()->with(['message' => 'driver not found.']);
+        }
+
+        $driver->update(['status' => 1]);
+
+        return back()->with(['message' => 'Order finished successfully']);
     }
 }

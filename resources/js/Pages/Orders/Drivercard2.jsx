@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { router } from "@inertiajs/react";
 
 const Drivercard = ({ driver, setData }) => {
+    const [selected, setSelected] = useState(false);
 
     const handleStatusChange = () => {
+        setSelected(!selected);
         setData('driver', driver.id);
-        router.patch(`/drivers/${driver.id}`, { status: driver.status === 1 ? 0 : 1 });
     };
 
     return (
         <div className={`flex flex-col-1 m-auto mb-10 gap-3`}>
             <div
                 key={driver.id}
-                className="max-w-2xl m-auto px-8 shadow-xl rounded-lg text-gray-900 bg-orange-500"
+                className={`${driver.status ? "max-w-2xl m-auto px-[35px] shadow-xl rounded-lg text-gray-900 bg-orange-500" : "max-w-2xl m-auto px-8 shadow-xl rounded-lg text-gray-900 bg-orange-500 py-[14px]"}`}
             >
                 <div className="rounded-t-lg h-32 overflow-hidden">
                     <img className="object-cover object-top w-full" src={driver.picture} alt="" />
@@ -23,11 +23,13 @@ const Drivercard = ({ driver, setData }) => {
                 <div className="text-center mt-2">
                     <h2 className="font-bold text-xl">{driver.name}</h2>
                     <p className="bg-stone-800 mt-2 mb-1 rounded">
-                        {driver.status == true ? (
-                            <span className="text-white">Not Selected</span>
-                        ) : (
+                        {!driver.status ? (
+                           <span className="text-orange-500"></span> 
+                        ) : (selected ? (
                             <span className="text-green-600">Selected</span>
-                        )}
+                        ) : (
+                            <span className="text-white">Not Selected</span>
+                        ))}
                     </p>
                 </div>
                 <hr className="border-[1px] border-orange-900" />
@@ -35,9 +37,10 @@ const Drivercard = ({ driver, setData }) => {
                     <button
                         type="button"
                         onClick={handleStatusChange}
-                        className="w-full block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2"
+                        className={`w-full ${!driver.status ? "opacity-50 cursor-not-allowed" : ""} block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2`}
+                        disabled={!driver.status}
                     >
-                        Select Driver
+                        {!driver.status ? "Not Avaliable" : "Select Driver"}
                     </button>
                 </div>
             </div>
@@ -46,3 +49,4 @@ const Drivercard = ({ driver, setData }) => {
 };
 
 export default Drivercard;
+
