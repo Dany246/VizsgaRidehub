@@ -49,6 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
     Route::get('/driver-dashboard', [DriverUserController::class, 'index'])->name('driveruser.index');
     Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
+    Route::patch('/car/{id}', [CarController::class, 'update'])->name('car.update');
 });
 
 

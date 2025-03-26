@@ -24,7 +24,7 @@ export const OrderButton = () => {
             <AlertDialogContent className="bg-black">
                 <AlertDialogHeader>
                     <AlertDialogTitle className="text-white">
-                      Youre order will be finished
+                      Your order is finished
                     </AlertDialogTitle>
                  
                     <AlertDialogCancel className="text-orange-600 bg-black hover:bg-stone-900 hover:text-orange-400">

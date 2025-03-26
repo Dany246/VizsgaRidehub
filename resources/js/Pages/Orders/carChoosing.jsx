@@ -31,13 +31,13 @@ const CarChoosing = ({cars, data, setData}) => {
     </PopoverTrigger>
     <PopoverContent className="w-[200px] p-0">
         <Command className="bg-stone-200">
-            <CommandInput placeholder="Search cars..." className="h-9 bg-white" />
             <CommandList>
                 {cars.length > 0 ? (
                     <CommandGroup className="bg-stone-200">
                         {cars.map((car) => (
+                            car.status === 0 ? null :
                             <CommandItem
-                                className="bg-stone-200 hover:bg-stone-300"
+                                className={`bg-stone-200 hover:bg-stone-300 ${!car.status ? "hidden" : ""}`}
                                 key={car.id}
                                 value={car.id}
                                 onSelect={() => {

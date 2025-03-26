@@ -53,6 +53,14 @@ class OrderController extends Controller
 
         $driver->update(['status' => 0]);
 
+        $car = Car::find($request->car);
+
+        if (!$car) {
+            return back()->with(['message' => 'car not found.']);
+        }
+
+        $car->update(['status' => 0]);
+
         return back()->with(['message' => 'Done']);
     }
 
@@ -66,20 +74,25 @@ class OrderController extends Controller
     {
         $order = Order::find($id);
 
-        if (!$order) {
-            return response()->json(['message' => 'Order not found'], 404);
+        $car = Car::find($order->car_id);
+
+        if (!$car) {
+            return back()->with(['message' => 'car not found.']);
         }
 
-        
-        $order->delete();
-
         $driver = Driver::find($order->driver_id);
-
+        
         if (!$driver) {
             return back()->with(['message' => 'driver not found.']);
         }
 
+        if (!$order) {
+            return back()->with(['message' => 'Order not found'], 404);
+        }
+
+        $order->delete();
         $driver->update(['status' => 1]);
+        $car->update(['status' => 1]);
 
         return back()->with(['message' => 'Order finished successfully']);
     }

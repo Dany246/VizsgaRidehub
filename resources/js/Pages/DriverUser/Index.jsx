@@ -26,8 +26,9 @@ import {
 
 export default function Index({ orders, auth }) {
     
-    const handleDelete = (id) => {
+    const handleFinishOrder = (id) => {
         router.delete(`/orders/${id}`);
+        router.patch(`/car/${id}`)
     }
 
     return (
@@ -78,7 +79,7 @@ export default function Index({ orders, auth }) {
                                                     Cancel
                                                 </AlertDialogCancel>
                                                 <AlertDialogAction   onClick={() =>
-                                                            handleDelete(
+                                                            handleFinishOrder(
                                                                 order.id
                                                             )
                                                         } className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900">
