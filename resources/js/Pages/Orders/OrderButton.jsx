@@ -1,13 +1,38 @@
-import React from 'react'
+import React from "react";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { router } from "@inertiajs/react";
 
 export const OrderButton = () => {
-    
-  return (
-    <div className="p-6 mx-8">
-    <button type="submit" className="w-1/3 block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2">
-        Order
-    </button>
-</div>
-  )
-}
+    return (
+        <div className=" pt-14 mx-auto">
+           <AlertDialog>
+            <AlertDialogTrigger>
+                <button type="submit" className=" block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2">
+                    Finish order
+                </button>
+            </AlertDialogTrigger>
+            <AlertDialogContent className="bg-black">
+                <AlertDialogHeader>
+                    <AlertDialogTitle className="text-white">
+                      Youre order will be finished
+                    </AlertDialogTitle>
+                 
+                    <AlertDialogCancel className="text-orange-600 bg-black hover:bg-stone-900 hover:text-orange-400">
+                        ok
+                    </AlertDialogCancel>
+                </AlertDialogHeader>
+            </AlertDialogContent>
+            </AlertDialog>
+        </div>
+    );
+};
