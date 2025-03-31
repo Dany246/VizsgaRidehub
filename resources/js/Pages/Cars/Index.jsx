@@ -6,7 +6,6 @@ const Carspage = ({ auth, cars }) => {
     return (
         <>
             <Head title="RideHub" />
-
             <Navbar auth={auth} />
 
             <h1 className="text-4xl font-bold pt-6 text-center">Cars</h1>
