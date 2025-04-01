@@ -10,5 +10,11 @@ export default defineConfig({
             refresh: true,
         }),
         react(),
+        
     ],
+    test: {
+        environment: 'jsdom', // Ez biztosítja, hogy a React Testing Library működjön
+        globals: true, // Így nem kell minden fájlban importálni a `test`-et
+        setupFiles: './vitest.setup.js' // Itt adjuk hozzá
+      },
 });
