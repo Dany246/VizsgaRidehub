@@ -31,7 +31,7 @@ const Orderspage = ({ auth, settlements, drivers, cars }) => {
                 <SettlementsChoosing settlements={settlements} settlementFromValue={data.settlement_from} setSettlementFromValue={setData} settlementToValue={data.settlement_to} setSettlementToValue={setData} />
                 <DriversChoosing drivers={drivers} data={data.driver} setData={setData} />
                 <CarChoosing  cars={cars} data={data.car} setData={setData} />
-                <OrderButton />
+                <OrderButton data={data} />
             </form>
 
 
