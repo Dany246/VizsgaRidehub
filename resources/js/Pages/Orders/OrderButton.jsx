@@ -27,9 +27,11 @@ export const OrderButton = () => {
                       Your order is finished
                     </AlertDialogTitle>
                  
-                    <AlertDialogCancel className="text-orange-600 bg-black hover:bg-stone-900 hover:text-orange-400">
-                        ok
-                    </AlertDialogCancel>
+                    <a className="text-center mx-auto" href="/">
+                        <AlertDialogCancel className="text-orange-600 bg-black hover:bg-stone-900 hover:text-orange-400">
+                            ok
+                        </AlertDialogCancel>
+                    </a>
                 </AlertDialogHeader>
             </AlertDialogContent>
             </AlertDialog>
