@@ -26,13 +26,14 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('Passw123'),
             'role' => 'driver',
         ]);
-    
-        // User::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::create([
+            'name' => 'Test',
+            'email' => 'test@test.com',
+            'password' => bcrypt('test1234'),
+            'role' => 'user',
+        ]);
+    
 
        $this->call(CarsSeeder::class); 
        $this->call(DriversSeeder::class);

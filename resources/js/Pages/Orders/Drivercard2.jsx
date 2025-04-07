@@ -1,12 +1,5 @@
-import { useState } from "react";
-
-const Drivercard = ({ driver, setData }) => {
-    const [selected, setSelected] = useState(false);
-
-    const handleStatusChange = () => {
-        setSelected(!selected);
-        setData('driver', driver.id);
-    };
+const Drivercard = ({ driver, selectedDriverId, handleSelect }) => {
+    const isSelected = selectedDriverId === driver.id;
 
     return (
         <div className={`flex flex-col-1 m-auto mb-10 gap-3`}>
@@ -24,23 +17,23 @@ const Drivercard = ({ driver, setData }) => {
                     <h2 className="font-bold text-xl">{driver.name}</h2>
                     <p className="bg-stone-800 mt-2 mb-1 rounded">
                         {!driver.status ? (
-                           <span className="text-orange-500"></span> 
-                        ) : (selected ? (
+                            <span className="text-orange-500"></span>
+                        ) : isSelected ? (
                             <span className="text-green-600">Selected</span>
                         ) : (
                             <span className="text-white">Not Selected</span>
-                        ))}
+                        )}
                     </p>
                 </div>
                 <hr className="border-[1px] border-orange-900" />
                 <div className="p-6 mx-8 mt-2">
                     <button
                         type="button"
-                        onClick={handleStatusChange}
+                        onClick={() => handleSelect(driver.id)}
                         className={`w-full ${!driver.status ? "opacity-50 cursor-not-allowed" : ""} block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2`}
                         disabled={!driver.status}
                     >
-                        {!driver.status ? "Not Avaliable" : "Select Driver"}
+                        {!driver.status ? "Not Available" : "Select Driver"}
                     </button>
                 </div>
             </div>
@@ -49,4 +42,3 @@ const Drivercard = ({ driver, setData }) => {
 };
 
 export default Drivercard;
-

@@ -21,13 +21,13 @@ class OrderController extends Controller
         return Inertia::render('Orders/Index', [
             // 'orders' => $orders
             'settlements' => $settlements,
-            'drivers'=>$driver,
-            'cars'=>$car
+            'drivers' => $driver,
+            'cars' => $car
         ]);
 
     }
 
-  
+
 
     public function store(Request $request)
     {
@@ -64,7 +64,8 @@ class OrderController extends Controller
         return back()->with(['message' => 'Done']);
     }
 
-    public function getData(){
+    public function getData()
+    {
         $data['data'] = Order::all();
         return Inertia::render('DriverUser/DriverDashboard', $data);
     }
@@ -81,7 +82,7 @@ class OrderController extends Controller
         }
 
         $driver = Driver::find($order->driver_id);
-        
+
         if (!$driver) {
             return back()->with(['message' => 'driver not found.']);
         }

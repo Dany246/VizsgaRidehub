@@ -10,7 +10,6 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { router } from "@inertiajs/react";
 
 export const OrderButton = ({ data }) => {
     const isDisabled = !data.car || !data.driver || !data.settlement_from || !data.settlement_to;

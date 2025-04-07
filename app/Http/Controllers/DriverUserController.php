@@ -8,7 +8,8 @@ use Inertia\Inertia;
 
 class DriverUserController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $orders = Order::with(['driver', 'car'])->get();
 
         return Inertia::render('DriverUser/Index', ['orders' => $orders]);
