@@ -78,15 +78,17 @@ export default function Index({ orders, auth }) {
                                                 <AlertDialogCancel className="text-orange-600 bg-black hover:bg-stone-900 hover:text-orange-400">
                                                     Cancel
                                                 </AlertDialogCancel>
-                                                <AlertDialogAction   onClick={() =>
-                                                            handleFinishOrder(
-                                                                order.id
-                                                            )
-                                                        } className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900">
-                                                  
-                                                       Finish
+                                                <a href="/">
+                                                    <AlertDialogAction  onClick={() =>
+                                                                handleFinishOrder(
+                                                                    order.id
+                                                                )
+                                                            }  className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900">
                                                     
-                                                </AlertDialogAction>
+                                                           <button>Finish</button>
+                                                    
+                                                    </AlertDialogAction>
+                                                </a>
                                             </AlertDialogFooter>
                                         </AlertDialogContent>
                                     </AlertDialog>

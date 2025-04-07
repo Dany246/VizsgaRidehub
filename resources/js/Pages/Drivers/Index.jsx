@@ -25,8 +25,8 @@ const Driverspage = ({ auth, drivers }) => {
         className={`flex flex-wrap mx-12 md:mx-5 justify-evenly gap-3 transition-opacity duration-1000 delay-300 ${loaded ? "opacity-100" : "opacity-0"
           }`}
       >
-        <a
-          href={route("drivers.index")}
+        <div
+         
           className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-yellow-950 bg-orange-600 hover:bg-orange-500 sm:w-1/2"
         >
           <div className="md:flex md:flex-col border-orange-700 border-opacity-50 border-4 rounded-lg md:items-center md:justify-center">
@@ -46,9 +46,8 @@ const Driverspage = ({ auth, drivers }) => {
               </p>
             </div>
           </div>
-        </a>
-        <a
-          href={route("drivers.index")}
+        </div>
+        <div
           className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-yellow-950 bg-orange-600 hover:bg-orange-500 sm:w-1/2"
         >
           <div className="md:flex md:flex-col border-orange-700 border-opacity-50 border-4 rounded-lg md:items-center md:justify-center">
@@ -67,7 +66,7 @@ const Driverspage = ({ auth, drivers }) => {
                 Szeghalom.
               </p></div>
           </div>
-        </a>
+        </div>
       </div>
       <div className={`text-center pt-24 transition-opacity duration-1000 delay-500 ${loaded ? "opacity-100" : "opacity-0"
           }`}>
