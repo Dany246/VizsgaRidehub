@@ -15,21 +15,30 @@ export default function Dashboard({auth}) {
    
     return (
         <AuthenticatedLayout
-            header={ 
+            header={auth.user.role !== 'driver' && (
                 <div className={`text-xl my-20 font-semibold text-center leading-tight text-white transition-opacity duration-1000 delay-100 ${
                     loaded ? "opacity-100" : "opacity-0"
                   }`}>
                     <h1 className='text-2xl p-2 my-20'>Profile<span className='bg-orange-500 font-bold text-black px-2 rounded-lg'>Datas:</span></h1> <br />
                     {user.name} <br />
                     {user.email} <br />
-                    <p>Thank you for using our service.</p>
-                   
-                 
+                    <p>Thank you for using our service.</p>:
                 </div>
-                
-            }
+            )}
+
+           
         >
             <Head title="Dashboard" />
+
+            {auth.user.role === 'driver' && (
+                <div className={`text-xl my-20 font-semibold text-center leading-tight text-white transition-opacity duration-1000 delay-100 ${
+                  loaded ? "opacity-100" : "opacity-0"
+                }`}>
+                  <h1 className='text-2xl p-2 my-20'>Profile<span className='bg-orange-500 font-bold text-black px-2 rounded-lg'>Datas:</span></h1> <br />
+                  {user.name} <br />
+                  Driver <br />
+                </div>
+            )};
 
            
             {auth.user.role === 'driver' && (
