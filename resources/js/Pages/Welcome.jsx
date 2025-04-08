@@ -33,7 +33,7 @@ export default function Welcome({ auth, drivers }) {
         className={`pt-10 text-xl w-[60%] m-auto font-bold text-center text-white  transition-opacity duration-1000 delay-700 ${loaded ? "opacity-100" : "opacity-0"
           }`}
       >
-        This project is a web application for find a ride, anywhere you want to go. Our project's goal, to help people who are in a hurry and don't have a car, here they can find a safe and quick way to get to their destination.
+        This project is a web application to find a ride, anywhere you want to go. Our project's goal, to help people who are in a hurry and don't have a car, here they can find a safe and quick way to get to their destination.
       </h4>
         <div className={`text-center pt-16 transition-opacity duration-1000 delay-1000 ${loaded ? "opacity-100" : "opacity-0"
           }`}>
