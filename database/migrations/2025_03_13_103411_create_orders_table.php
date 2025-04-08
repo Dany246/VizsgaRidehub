@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string("to");
             $table->foreignId("car_id")->constrained("cars");
             $table->foreignId("driver_id")->constrained("drivers");
+            $table->boolean('payment')->nullable();
+            $table->string('price')->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

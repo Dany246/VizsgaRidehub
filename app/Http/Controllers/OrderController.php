@@ -64,6 +64,25 @@ class OrderController extends Controller
         return back()->with(['message' => 'Done']);
     }
 
+    public function update(Request $request, $id)
+    {
+        $order = Order::find($id);
+
+        if (!$order) {
+            return back()->with(['message' => 'Order not found'], 404);
+        }
+        $order->update(['status' => $request->status]);
+        if($request->status == 2){
+            $driver = Driver::find($order->driver_id);
+            $driver->update(['status' => 1]);
+            $car = Car::find($order->car_id);
+            $car->update(['status' => 1]);
+            
+        }
+        return back()->with(['message' => 'Done']);
+        
+    }
+
     public function getData()
     {
         $data['data'] = Order::all();

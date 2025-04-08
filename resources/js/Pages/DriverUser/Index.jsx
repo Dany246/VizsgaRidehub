@@ -25,14 +25,11 @@ import {
 export default function Index({ orders, auth }) {
     const [openDialogId, setOpenDialogId] = useState(null);
 
+    const handleStartOrder = (id) => {
+        router.patch(`/orders/${id}`, { status: 1 });
+    };
     const handleFinishOrder = (id) => {
-        router.delete(`/orders/${id}`, {
-            onSuccess: () => {
-                router.patch(`/car/${id}`, {
-                    onSuccess: () => setOpenDialogId(null)
-                });
-            }
-        });
+        router.patch(`/orders/${id}`, { status: 2 });
     };
 
     return (
@@ -47,47 +44,103 @@ export default function Index({ orders, auth }) {
                             <TableHead>From</TableHead>
                             <TableHead>To</TableHead>
                             <TableHead>Car Type</TableHead>
-                            <TableHead>Action</TableHead>
+                            <TableHead>Status</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {orders.map((order) => (
                             <TableRow key={order.id}>
-                                <TableCell>{order.driver?.name || 'N/A'}</TableCell>
+                                <TableCell>
+                                    {order.driver?.name || "N/A"}
+                                </TableCell>
                                 <TableCell>{order.from}</TableCell>
+
                                 <TableCell>{order.to}</TableCell>
-                                <TableCell>{order.car?.cartype || 'N/A'}</TableCell>
+                                <TableCell>
+                                    {order.car?.cartype || "N/A"}
+                                </TableCell>
                                 <TableCell>
                                     <AlertDialog
                                         open={openDialogId === order.id}
                                         onOpenChange={(isOpen) =>
-                                            setOpenDialogId(isOpen ? order.id : null)
+                                            setOpenDialogId(
+                                                isOpen ? order.id : null
+                                            )
                                         }
                                     >
                                         <AlertDialogTrigger asChild>
+                                            
                                             <button className="bg-orange-600 text-white p-2 rounded-lg">
-                                                Finish order
+                                                {
+                                                    [
+                                                        "Start",
+                                                        "On Going",
+                                                        "Finished",
+                                                    ][order.status]
+                                                }
                                             </button>
                                         </AlertDialogTrigger>
                                         <AlertDialogContent className="bg-black">
                                             <AlertDialogHeader>
                                                 <AlertDialogTitle className="text-white">
-                                                    Are you sure you want to finish the order?
+                                                {
+                                                    [
+                                                        " Are you sure you want to start the order?",
+                                                        "Are you sure you want to finish the order?",
+                                                        "This order is already Finished",
+                                                    ][order.status]
+                                                }
                                                 </AlertDialogTitle>
                                                 <AlertDialogDescription>
-                                                    This action cannot be undone.
+                                                {
+                                                    [
+                                                        " This action cannot be undone",
+                                                        "This action cannot be undone",
+                                                        "",
+                                                    ][order.status]
+                                                }
                                                 </AlertDialogDescription>
                                             </AlertDialogHeader>
                                             <AlertDialogFooter>
                                                 <AlertDialogCancel className="text-orange-600 bg-black hover:bg-stone-900 hover:text-orange-400">
                                                     Cancel
                                                 </AlertDialogCancel>
-                                                <AlertDialogAction
-                                                    onClick={() => handleFinishOrder(order.id)}
-                                                    className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900"
-                                                >
-                                                    Finish
-                                                </AlertDialogAction>
+                                                {order.status === 0 && (
+                                                    <AlertDialogAction
+                                                        onClick={() =>
+                                                            handleStartOrder(
+                                                                order.id
+                                                            )
+                                                        }
+                                                        className="bg-green-600 text-black hover:bg-green-400 hover:text-stone-900"
+                                                    >
+                                                        Start
+                                                    </AlertDialogAction>
+                                                )}
+                                                {order.status === 1 && (
+                                                    <AlertDialogAction
+                                                        onClick={() =>
+                                                            handleFinishOrder(
+                                                                order.id
+                                                            )
+                                                        }
+                                                        className="bg-orange-600 text-black hover:bg-orange-400 hover:text-stone-900"
+                                                    >
+                                                        Finish
+                                                    </AlertDialogAction>
+                                                )}
+                                                {order.status === 2 && (
+                                                    <AlertDialogAction
+                                                        onClick={() =>
+                                                            handleFinishOrder(
+                                                                order.id
+                                                            )
+                                                        }
+                                                        className="bg-gray-600 text-black hover:bg-gray-400 hover:text-stone-900"
+                                                    >
+                                                        Finished
+                                                    </AlertDialogAction>
+                                                )}
                                             </AlertDialogFooter>
                                         </AlertDialogContent>
                                     </AlertDialog>
@@ -97,9 +150,7 @@ export default function Index({ orders, auth }) {
                     </TableBody>
                 </Table>
             ) : (
-                <p className="text-center mt-8 text-2xl">
-                    No orders found.
-                </p>
+                <p className="text-center mt-8 text-2xl">No orders found.</p>
             )}
         </div>
     );
