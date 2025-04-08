@@ -28,7 +28,7 @@ const Carspage = ({ auth, cars }) => {
                                     {car.cartype}
                                 </h5>
                                 <p className="pl-1 font-normal text-yellow-700 dark:text-yellow-700">
-                                    {car.price} <br /> 
+                                    {car.price}/h {(car.price/60).toFixed(2)}/min<br /> 
                                     {car.license_plate} <br /> 
                                     {car.color}
                                 </p>
