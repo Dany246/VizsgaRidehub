@@ -1,42 +1,42 @@
 [
 {
     "cartype": "Skoda Octavia",
-    "price": "20000/h; 333/min",
+    "price": 20000,
     "license_plate": "SAJ-252",
     "color": "Gray",
     "img": "img/Cars/SkodaOctavia.webp"
 },
 {
     "cartype": "BMW E46",
-    "price": "15000/h; 250/min",
+    "price": 15000,
     "license_plate": "PXR-865",
     "color": "Black",
     "img": "img/Cars/BmwE46.webp"
 },
 {
     "cartype": "Volkswagen Caravelle",
-    "price": "12000/h; 200/min",
+    "price": 12000,
     "license_plate": "IQH-880",
     "color": "Gray",
     "img": "img/Cars/VwCaravelle.webp"
 },
 {
     "cartype": "Ford Focus",
-    "price": "12000/h; 200/min",
+    "price": 12000,
     "license_plate": "IMA-483",
     "color": "Gray",
     "img": "img/Cars/FordFocus.webp"
 },
 {
     "cartype": "Volkswagen Caddy",
-    "price": "10000/h; 166/min",
+    "price": 10000,
     "license_plate": "WRL-057",
     "color": "White",
     "img": "img/Cars/VwCaddy.webp"
 },
 {
     "cartype": "Opel Astra",
-    "price": "8000/h; 133/min",
+    "price": 8000,
     "license_plate": "GTX-050",
     "color": "Gray",
     "img": "img/Cars/OpelAstra.webp"
