@@ -34,11 +34,11 @@ export default function Index({ orders, auth }) {
     const [statusFilter, setStatusFilter] = useState("all");
 
     const handleStartOrder = (id) => {
-        router.patch(`/orders/${id}`, { status: 1 });
+        router.patch(`/orders/${id}`, { status: 1 , start: Math.round(new Date().getTime() / 60000),});
     };
 
     const handleFinishOrder = (id) => {
-        router.patch(`/orders/${id}`, { status: 2 });
+        router.patch(`/orders/${id}`, { status: 2 , end: Math.round(new Date().getTime() / 60000),});
     };
 
     return (
@@ -71,6 +71,9 @@ export default function Index({ orders, auth }) {
                                 <TableHead>From</TableHead>
                                 <TableHead>To</TableHead>
                                 <TableHead>Car Type</TableHead>
+                                <TableHead>Start Date</TableHead>
+                                <TableHead>End Date</TableHead>
+                                <TableHead>Duration</TableHead>
                                 <TableHead>Status</TableHead>
                             </TableRow>
                         </TableHeader>
@@ -90,6 +93,15 @@ export default function Index({ orders, auth }) {
                                         <TableCell>{order.to}</TableCell>
                                         <TableCell>
                                             {order.car?.cartype || "N/A"}
+                                        </TableCell>
+                                        <TableCell>
+                                            {order.start ? new Date(order.start * 60000).toLocaleString() : ""}
+                                        </TableCell>
+                                        <TableCell>
+                                            {order.end ? new Date(order.start * 60000).toLocaleString() : ""}
+                                        </TableCell>
+                                        <TableCell>
+                                            {order.duration ? order.duration : ""}
                                         </TableCell>
                                         <TableCell>
                                             <AlertDialog

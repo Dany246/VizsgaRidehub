@@ -19,6 +19,9 @@ return new class extends Migration
             $table->foreignId("driver_id")->constrained("drivers");
             $table->boolean('payment')->nullable();
             $table->string('price')->nullable();
+            $table->integer('start')->nullable();
+            $table->integer('end')->nullable();
+            $table->integer('duration')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

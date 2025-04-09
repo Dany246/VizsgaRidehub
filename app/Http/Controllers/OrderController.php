@@ -71,8 +71,9 @@ class OrderController extends Controller
         if (!$order) {
             return back()->with(['message' => 'Order not found'], 404);
         }
-        $order->update(['status' => $request->status]);
+        $order->update($request->all());
         if($request->status == 2){
+            $order->update(['duration' => ($order->end - $order->start)]);
             $driver = Driver::find($order->driver_id);
             $driver->update(['status' => 1]);
             $car = Car::find($order->car_id);
