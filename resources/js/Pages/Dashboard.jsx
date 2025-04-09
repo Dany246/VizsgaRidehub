@@ -22,7 +22,7 @@ export default function Dashboard({auth}) {
                     <h1 className='text-2xl p-2 my-20'>Profile<span className='bg-orange-500 font-bold text-black px-2 rounded-lg'>Datas:</span></h1> <br />
                     {user.name} <br />
                     {user.email} <br />
-                    <p>Thank you for using our service.</p>:
+                    <p>Thank you for using our service.</p>
                 </div>
             )}
 
@@ -38,7 +38,7 @@ export default function Dashboard({auth}) {
                   {user.name} <br />
                   Driver <br />
                 </div>
-            )};
+            )}
 
            
             {auth.user.role === 'driver' && (
