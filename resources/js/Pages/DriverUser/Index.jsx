@@ -34,11 +34,12 @@ export default function Index({ orders, auth }) {
     const [statusFilter, setStatusFilter] = useState("all");
 
     const handleStartOrder = (id) => {
-        router.patch(`/orders/${id}`, { status: 1 , start: Math.round(new Date().getTime() / 60000),});
+        router.patch(`/orders/${id}`, { status: 1, start: Math.round(new Date().getTime() / 60000), });
     };
 
     const handleFinishOrder = (id) => {
-        router.patch(`/orders/${id}`, { status: 2 , end: Math.round(new Date().getTime() / 60000),});
+        router.patch(`/orders/${id}`, { status: 2, end: Math.round(new Date().getTime() / 60000), });
+  
     };
 
     return (
@@ -57,8 +58,8 @@ export default function Index({ orders, auth }) {
                             <SelectContent className="bg-stone-900  ">
                                 <SelectItem className="text-orange-500 " value="all">All</SelectItem>
                                 <SelectItem className="text-orange-500  " value="0">Ordered</SelectItem>
-                                <SelectItem  className="text-orange-500 "value="1">On Going</SelectItem>
-                                <SelectItem  className="text-orange-500 "value="2">Finished</SelectItem>
+                                <SelectItem className="text-orange-500 " value="1">On Going</SelectItem>
+                                <SelectItem className="text-orange-500 " value="2">Finished</SelectItem>
                             </SelectContent>
                         </Select>
                     </div>
@@ -74,6 +75,7 @@ export default function Index({ orders, auth }) {
                                 <TableHead>Start Date</TableHead>
                                 <TableHead>End Date</TableHead>
                                 <TableHead>Duration</TableHead>
+                                <TableHead>Price</TableHead>
                                 <TableHead>Status</TableHead>
                             </TableRow>
                         </TableHeader>
@@ -82,7 +84,7 @@ export default function Index({ orders, auth }) {
                                 .filter(
                                     (order) =>
                                         statusFilter === "all" ||
-                                        order.status.toString() === statusFilter 
+                                        order.status.toString() === statusFilter
                                 )
                                 .map((order) => (
                                     <TableRow key={order.id}>
@@ -104,6 +106,10 @@ export default function Index({ orders, auth }) {
                                             {order.duration ? order.duration : ""}
                                         </TableCell>
                                         <TableCell>
+                                            {order.duration
+                                            ? `${order.duration * order.car?.price}FT`: `${order.car?.price || ""}FT/min`}
+                                        </TableCell>
+                                        <TableCell>
                                             <AlertDialog
                                                 open={openDialogId === order.id}
                                                 onOpenChange={(isOpen) =>
@@ -118,9 +124,9 @@ export default function Index({ orders, auth }) {
                                                             order.status === 0
                                                                 ? "bg-green-600 text-white p-2 rounded-lg"
                                                                 : order.status ===
-                                                                  1
-                                                                ? "bg-orange-600 text-white p-2 rounded-lg"
-                                                                : "bg-gray-600 text-white p-2 rounded-lg pointer-events-none"
+                                                                    1
+                                                                    ? "bg-orange-600 text-white p-2 rounded-lg"
+                                                                    : "bg-gray-600 text-white p-2 rounded-lg pointer-events-none"
                                                         }
                                                     >
                                                         {
