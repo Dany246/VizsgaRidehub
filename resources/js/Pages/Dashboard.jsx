@@ -39,7 +39,12 @@ export default function Dashboard({auth}) {
                   Driver <br />
                 </div>
             )}
-
+            
+            {auth.user.role !== 'driver' && (
+        <a href="/userorder" className="flex justify-center text-black font-bold mt-32 text-center w-2/12 mx-auto bg-orange-600 py-2 px-4 rounded">
+          Check Orders
+        </a>
+      )}
            
             {auth.user.role === 'driver' && (
         <a href="/driver-dashboard" className="flex justify-center text-black font-bold mt-32 text-center w-2/12 mx-auto bg-orange-600 py-2 px-4 rounded">

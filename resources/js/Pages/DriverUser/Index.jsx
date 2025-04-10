@@ -38,7 +38,7 @@ export default function Index({ orders, auth }) {
     };
 
     const handleFinishOrder = (id) => {
-        router.patch(`/orders/${id}`, { status: 2, end: Math.round(new Date().getTime() / 60000), });
+        router.patch(`/orders/${id}`, { status: 2,  end: Math.round(new Date().getTime() / 60000), });
   
     };
 
@@ -103,11 +103,11 @@ export default function Index({ orders, auth }) {
                                             {order.end ? new Date(order.start * 60000).toLocaleString() : ""}
                                         </TableCell>
                                         <TableCell>
-                                            {order.duration ? order.duration : ""}
+                                            {order.duration ? `${order.duration} min` : ""}
                                         </TableCell>
                                         <TableCell>
                                             {order.duration
-                                            ? `${order.duration * order.car?.price}FT`: `${order.car?.price || ""}FT/min`}
+                                            ? `${order.duration * (order.car?.price / 60).toFixed(2)}FT`: `${(order.car?.price / 60).toFixed(2) || ""}FT/min`}
                                         </TableCell>
                                         <TableCell>
                                             <AlertDialog

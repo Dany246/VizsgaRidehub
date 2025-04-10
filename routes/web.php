@@ -7,6 +7,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RidesController;
+use App\Http\Controllers\UserOrderController;
 use App\Models\Driver;
 use App\Models\Order;
 use Illuminate\Foundation\Application;
@@ -49,6 +50,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
     Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
     Route::get('/driver-dashboard', [DriverUserController::class, 'index'])->name('driveruser.index');
+
+
+    Route::get('/userorder', [UserOrderController::class, 'index'])->name('userorder.index');
+
+    
     Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
     Route::patch('/car/{id}', [CarController::class, 'update'])->name('car.update');
 });

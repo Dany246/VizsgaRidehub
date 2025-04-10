@@ -74,6 +74,7 @@ class OrderController extends Controller
         $order->update($request->all());
         if($request->status == 2){
             $order->update(['duration' => ($order->end - $order->start)]);
+            $order->update(['price' => number_format($order->duration * $order->car->price / 60), 2]);
             $driver = Driver::find($order->driver_id);
             $driver->update(['status' => 1]);
             $car = Car::find($order->car_id);
