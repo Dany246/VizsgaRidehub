@@ -18,6 +18,6 @@ class Order extends Model
 
     public function car(){
         return $this->belongsTo(Car::class);
-        $order->car->price;
+      
     }
 }
