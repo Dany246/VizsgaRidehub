@@ -18,7 +18,7 @@ export const OrderButton = ({ data }) => {
         <div className="pt-4 mx-auto text-center">
             <AlertDialog>
                 {/* Reserve space regardless of message state to avoid layout shift */}
-                <div className="h-5 mb-1">
+                <div className="h-5 ">
                     {isDisabled && (
                         <p className="text-red-500 font-medium text-sm">
                             Please select a car, driver, and both settlements before finishing the order.
@@ -30,7 +30,7 @@ export const OrderButton = ({ data }) => {
                     <button
                         type="submit"
                         disabled={isDisabled}
-                        className="block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white px-6 py-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                        className="block mx-auto rounded-full bg-stone-900 hover:shadow-lg font-semibold text-white mt-6 px-6 py-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
                     >
                         Finish order
                     </button>
