@@ -13,7 +13,7 @@ const UserOrderCheck = ({ orders, auth }) => {
                 <th className="border-stone-900 border px-4 py-2">Driver</th>
                 <th className="border-stone-900 border px-4 py-2">Car</th>
                 <th className="border-stone-900 border px-4 py-2">Price</th>
-                <th className="border-stone-900 border px-4 py-2">Státusz</th>
+                <th className="border-stone-900 border px-4 py-2">Status</th>
               </tr>
             </thead>
             <tbody>
