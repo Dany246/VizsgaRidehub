@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "fcadc82893b7c15b",
+    "id": "0434dc1b4b7f2d4a",
     "type": "split",
     "children": [
       {
-        "id": "4c7b6a6a75ae3498",
+        "id": "932c6018b77cd5fb",
         "type": "tabs",
         "children": [
           {
-            "id": "ff3bb077451fd56d",
+            "id": "7a68df007a3fd2b0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dokumentáció.md",
+                "file": "Bevezetés.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dokumentáció"
+              "title": "Bevezetés"
             }
           }
         ]
@@ -27,15 +27,32 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "4629c46ed94012ee",
+    "id": "832c59ab3fba5f5c",
     "type": "split",
     "children": [
       {
-        "id": "73fa277b946821d8",
+        "id": "4e70ea6cd4e4559b",
         "type": "tabs",
         "children": [
           {
-            "id": "c16ddde1fc63feec",
+            "id": "b2ad1335e0c644b8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "path:\"Dokumentáció/\" ",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9ddac9a944e095d6",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,24 +65,7 @@
             }
           },
           {
-            "id": "4480db176edc4df5",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Search"
-            }
-          },
-          {
-            "id": "cdf55bbbb69e37d3",
+            "id": "7574bee1cec0a7d8",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -74,27 +74,28 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "1d8f66072186d5f3",
+    "id": "2dfdf925c24e00a1",
     "type": "split",
     "children": [
       {
-        "id": "a95d4a08c04cd418",
+        "id": "36f2c5d52578efeb",
         "type": "tabs",
         "children": [
           {
-            "id": "2dd748df55276903",
+            "id": "b37e8d9cfba44498",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dokumentáció.md",
+                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +105,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Dokumentáció"
+              "title": "Backlinks for Welcome"
             }
           },
           {
-            "id": "d2efcb2caa5916de",
+            "id": "0e3a50ca216da751",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dokumentáció.md",
+                "file": "Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Dokumentáció"
+              "title": "Outgoing links from Welcome"
             }
           },
           {
-            "id": "d7609be2d7a30d7b",
+            "id": "2a1faef66704298d",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,18 +138,18 @@
             }
           },
           {
-            "id": "a2057b9a5479235b",
+            "id": "84a2abded7ad8023",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dokumentáció.md",
+                "file": "Welcome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Dokumentáció"
+              "title": "Outline of Welcome"
             }
           }
         ]
@@ -168,10 +169,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ff3bb077451fd56d",
+  "active": "9ddac9a944e095d6",
   "lastOpenFiles": [
-    "Untitled 1.md",
-    "Dokumentáció.md",
-    "Untitled.md"
+    "Képernyőkép 2025-04-15 095437.png",
+    "Képernyőkép 2025-04-15 093050.png",
+    "Képernyőkép 2025-04-15 093039.png",
+    "Képernyőkép 2025-04-15 092851.png",
+    "Képernyőkép 2025-04-15 095004.png",
+    "Képernyőkép 2025-04-15 092816.png",
+    "Képernyőkép 2025-04-15 092801.png",
+    "Pasted image 20250415094307.png",
+    "Képernyőkép 2025-04-15 092632 1.png",
+    "Képernyőkép 2025-04-15 092632.png",
+    "Képernyőkép 2025-04-15 092624.png",
+    "Bevezetés.md",
+    "Fejlesztői dokumentáció.md",
+    "Dokumentáció",
+    "Dokumentáció",
+    "Welcome.md",
+    "Untitled.canvas"
   ]
 }
