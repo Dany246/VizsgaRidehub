@@ -6,8 +6,8 @@
 
 - **Backend**: Laravel
 - **Frontend**: React + Inertia.js
-- **Database**: [ide jöhet pl. MySQL vagy PostgreSQL, ha van]
-- **Egyéb**: [Auth? Tailwind? Docker?]
+- **Database**: SqLite
+
 
 ## 🚀 Telepítés
 
