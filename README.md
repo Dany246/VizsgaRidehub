@@ -7,6 +7,7 @@
 - **Backend**: Laravel
 - **Frontend**: React + Inertia.js
 - **Database**: SqLite
+- **Egyéb**: TailwindCss, Shadcn
 
 
 ## 🚀 Telepítés
@@ -19,4 +20,4 @@ npm install
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
-npm run dev
+ncomposer run dev
