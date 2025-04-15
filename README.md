@@ -13,8 +13,7 @@
 ## 🚀 Telepítés
 
 ```bash
-git clone https://github.com/felhasznalonev/ride-hub.git
-cd ride-hub
+
 composer install
 npm install
 cp .env.example .env
