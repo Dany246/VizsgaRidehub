@@ -2,6 +2,9 @@
 
 **Ride Hub** egy modern webes alkalmazás, amely a közös utazások szervezését teszi egyszerűvé és hatékonnyá. A projekt Laravel backendre épül, és Inertia.js-en keresztül kapcsolódik a React-alapú frontendhez.
 
+## 🗎 Dokumentáció
+A **Dokumentáció** megtalálható ezen a [linken](https://github.com/Dany246/VizsgaRidehub/blob/main/Documentation/documentation.md).
+
 ## 🛠 Technológiák
 
 - **Backend**: Laravel
