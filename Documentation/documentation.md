@@ -152,12 +152,12 @@ Illetve szükség van egy webböngészőre is ahol meg tudjuk nyitni az alkalmaz
 
 ## Felhasználói leírás
 
-A főoldalra lépve egy rövid leírást láthatunk az alkalmazásról és a sofőröket figyelhetjük meg
+A főoldalra lépve egy rövid leírást láthatunk az alkalmazásról és a sofőröket figyelhetjük meg.
 
 ![Képernyőkép 2025-04-15 092529.png](Képernyőkép%202025-04-15%20092529.png)
 
-A regisztáció gombra kattintva ezt a felületet kapjuk
-A regisztáció könnyen elvégezhető, ha mégsem szeretnénk regisztálni az autó cionra kattintva vissza térhetünk a főőoldalra.
+A regisztáció gombra kattintva ezt a felületet kapjuk.
+A regisztáció könnyen elvégezhető, ha mégsem szeretnénk regisztálni az autó iconra kattintva vissza térhetünk a főoldalra.
 
 ![Képernyőkép 2025-04-15 092539.png](Képernyőkép%202025-04-15%20092539.png)
 
@@ -165,11 +165,11 @@ A regisztráció után bejelentkezésre már nincs szükség automatikusan a pro
 
 ![Képernyőkép 2025-04-15 092556.png](Képernyőkép%202025-04-15%20092556.png)
 
-A főoldalra visszatérve nézzük meg mit láthatunk a többi menüpontban
+A főoldalra visszatérve nézzük meg mit láthatunk a többi menüpontban.
 
 ![Pasted image 20250415094307.png](Pasted%20image%2020250415094307.png)
 
-A "Drivers"-nél a sofőrökről tudhatunk meg több információt
+A "Drivers"-nél a sofőrökről tudhatunk meg több információt.
 
 ![Képernyőkép 2025-04-15 092614 1.png](Képernyőkép%202025-04-15%20092614%201.png)
 
@@ -181,17 +181,17 @@ A "Feedback"-nél vissza jelzést küldhetünk és olvashatunk az alkalmazásró
 
 ![Képernyőkép 2025-04-15 092632.png](Képernyőkép%202025-04-15%20092632.png) ![Képernyőkép 2025-04-15 092632 1.png](Képernyőkép%202025-04-15%20092632%201.png)
 
-Majd a rendelési felület amely a főoldalról és a "drivers" oldalról érhetunk el a "Order a ride here" gomb megnyomásával érhetünk el
+Majd a rendelési felület amely a főoldalról és a "drivers" oldalról, az "Order a ride here" gomb megnyomásával érhetünk el.
 
 ![Képernyőkép 2025-04-15 092801.png](Képernyőkép%202025-04-15%20092801.png)
 
 Itt választhatjuk ki azt a 4 dolgot ami a rendeléshez szükséges:
 
--   Az a települést ahonnan indulni szeretnénk
--   Azt a települést ahová menni szeretnénk
+-   A települést ahonnan indulni szeretnénk
+-   A települést ahová menni szeretnénk
 -   A sofőrt akivel menni szeretnénk
 -   És az autót.
--   A "Finish Order" gombal elküldhetjük a rendelés.
+-   A "Finish Order" gombbal elküldhetjük a rendelés.
 
 A profil oldalra visszamenve kattintsunk a check orders gombra
 
